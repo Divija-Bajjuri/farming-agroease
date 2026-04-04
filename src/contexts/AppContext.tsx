@@ -202,30 +202,99 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     setWeatherError(null);
     try {
       const body: any = { language: opts?.language || 'en' };
-      if (opts?.lat && opts?.lon) {
-        body.lat = opts.lat;
-        body.lon = opts.lon;
-      } else if (opts?.city) {
-        body.city = opts.city;
-      } else if (gpsCoords) {
-        body.lat = gpsCoords.lat;
-        body.lon = gpsCoords.lon;
-      } else {
+        if (opts?.city) {
+  body.city = opts.city;
+}
+
+// PRIORITY 2 → coordinates passed directly
+else if (opts?.lat && opts?.lon) {
+  body.lat = opts.lat;
+  body.lon = opts.lon;
+}
+
+// PRIORITY 3 → stored GPS location
+else if (gpsCoords) {
+  body.lat = gpsCoords.lat;
+  body.lon = gpsCoords.lon;
+}
+      else {
         body.city = 'Hyderabad';
       }
 
-      const { data, error } = await supabase.functions.invoke('weather', { body });
+const API_KEY = import.meta.env.VITE_OPENWEATHER_API_KEY;
 
-      if (error) throw new Error(error.message || 'Failed to fetch weather');
-      if (data?.error) throw new Error(data.error);
+let lat = body.lat;
+let lon = body.lon;
 
-      setWeatherData(data);
+// If user typed a city/village, convert it to coordinates
+if (!lat && body.city) {
+  const geoResponse = await fetch(
+    `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(body.city)},India&format=json&limit=1`,
+   {
+    headers: {
+      "User-Agent": "KrishiMitraWeatherApp"
+    }
+  }
+  );
+
+  const geoData = await geoResponse.json();
+
+  if (!geoData || geoData.length === 0) {
+    throw new Error("Location not found");
+  }
+
+  lat = parseFloat(geoData[0].lat);
+  lon = parseFloat(geoData[0].lon);
+}
+
+// Now fetch weather using coordinates
+const weatherResponse = await fetch(
+  `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`
+);
+
+const result = await weatherResponse.json();
+
+if (!result || result.cod !== 200) {
+  throw new Error(result?.message || "Weather API failed");
+}
+
+
+const formattedData = {
+  location: result.name,
+  lat: result.coord?.lat || null,
+  lon: result.coord?.lon || null,
+  current: {
+    temp: Math.round(result.main.temp),
+    feels_like: Math.round(result.main.feels_like),
+    temp_min: Math.round(result.main.temp_min),
+    temp_max: Math.round(result.main.temp_max),
+    humidity: result.main.humidity,
+    pressure: result.main.pressure,
+    wind_speed: Math.round(result.wind.speed * 3.6),
+    wind_deg: result.wind.deg,
+    visibility: result.visibility / 1000,
+    clouds: result.clouds.all,
+    rain_mm: result.rain?.['1h'] || 0,
+    condition: result.weather[0].description,
+    condition_id: result.weather[0].id,
+    condition_icon: result.weather[0].main.toLowerCase(),
+    sunrise: result.sys.sunrise,
+    sunset: result.sys.sunset
+  },
+  forecast: [],
+  farming_advice: [],
+  weather_alerts: [],
+  fetched_at: new Date().toISOString(),
+  is_live: true
+};
+
+setWeatherData(formattedData);
 
       // Auto-add weather alerts as notifications (only once per fetch)
-      if (data.weather_alerts && data.weather_alerts.length > 0 && !weatherAlertsAdded.current) {
+      if (formattedData.weather_alerts && formattedData.weather_alerts.length > 0 && !weatherAlertsAdded.current) {
         weatherAlertsAdded.current = true;
         const lang = opts?.language || 'en';
-        for (const alert of data.weather_alerts) {
+        for (const alert of formattedData.weather_alerts) {
           const title = alert.title[lang] || alert.title.en;
           const message = alert.message[lang] || alert.message.en;
           setNotifications(prev => {
@@ -244,9 +313,9 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       }
 
       // Add farming advice alerts for high severity items
-      if (data.farming_advice && !weatherAlertsAdded.current) {
+      if (formattedData.farming_advice && !weatherAlertsAdded.current) {
         const lang = opts?.language || 'en';
-        const highSeverity = data.farming_advice.filter((a: FarmingAdviceItem) => a.severity === 'high');
+        const highSeverity = formattedData.farming_advice.filter((a: FarmingAdviceItem) => a.severity === 'high');
         for (const advice of highSeverity.slice(0, 2)) {
           const msg = advice[lang] || advice.en;
           setNotifications(prev => {

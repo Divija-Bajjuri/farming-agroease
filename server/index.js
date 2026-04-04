@@ -20,7 +20,7 @@ app.use('/api/machines', require('./routes/machines'));
 app.use('/api/schemes', require('./routes/schemes'));
 app.use('/api/faqs', require('./routes/faqs'));
 app.use('/api/fertilizers', require('./routes/fertilizers'));
-app.use('/api/diseases', require('./routes/diseases'));
+//app.use('/api/diseases', require('./routes/diseases'));
 
 // Health check
 app.get('/api/health', (req, res) => {
