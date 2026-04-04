@@ -82,7 +82,7 @@ const SAMPLE_MACHINES: Machine[] = [
 const MachineryRental: React.FC = () => {
   const { t, language } = useLanguage();
   const { user } = useAuth();
-  const { darkMode, setCurrentPage, addNotification } = useApp();
+  const { darkMode, setCurrentPage, addNotification, machineFilter } = useApp();
   const [machines, setMachines] = useState<Machine[]>(SAMPLE_MACHINES);
   const [isLoading, setIsLoading] = useState(false);
   const [searchType, setSearchType] = useState('');
@@ -133,11 +133,27 @@ const MachineryRental: React.FC = () => {
     return null;
   };
 
-  const filtered = machines.filter(m => {
-    if (searchType && m.type !== searchType) return false;
-    if (searchLocation && !m.location.toLowerCase().includes(searchLocation.toLowerCase())) return false;
-    return true;
-  });
+  useEffect(() => {
+    if (machineFilter && !searchType) {
+      setSearchType(machineFilter);
+    }
+  }, [machineFilter, searchType]);
+
+const effectiveType = searchType || machineFilter;
+
+const filtered = machines.filter(m => {
+  if (
+    effectiveType &&
+    m.type.toLowerCase() !== effectiveType.toLowerCase()
+  ) return false;
+
+  if (
+    searchLocation &&
+    !m.location.toLowerCase().includes(searchLocation.toLowerCase())
+  ) return false;
+
+  return true;
+});
 
   // Handle booking confirmation
   const handleBookingConfirm = (bookingData: BookingData) => {
@@ -287,7 +303,12 @@ const MachineryRental: React.FC = () => {
               className={`flex-1 px-4 py-3 border-2 rounded-xl ${darkMode ? 'bg-gray-700 border-gray-600 text-white' : 'border-gray-200'} focus:border-green-500`} />
           </div>
         </div>
-
+{/* Active Filter Message */}
+{effectiveType && (
+  <p className="text-sm text-green-600 mb-3">
+    Showing machines for: {effectiveType}
+  </p>
+)}
         {/* Machine Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {filtered.map(machine => (

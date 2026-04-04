@@ -69,10 +69,10 @@ export const translations: Record<string, Record<Language, string>> = {
   'chat.listening': { en: 'Listening...', hi: 'सुन रहा हूं...', te: 'వింటోంది...' },
   'chat.thinking': { en: 'Thinking...', hi: 'सोच रहा हूं...', te: 'ఆలోచిస్తోంది...' },
   'chat.quickQ': { en: 'Quick Questions', hi: 'त्वरित प्रश्न', te: 'త్వరిత ప్రశ్నలు' },
-  'chat.q1': { en: 'How to treat leaf blight?', hi: 'पत्ती झुलसा का इलाज कैसे करें?', te: 'ఆకు తెగులు చికిత్స ఎలా?' },
-  'chat.q2': { en: 'Best fertilizer for rice?', hi: 'धान के लिए सबसे अच्छा उर्वरक?', te: 'వరికి ఉత్తమ ఎరువు?' },
-  'chat.q3': { en: 'Government schemes for farmers', hi: 'किसानों के लिए सरकारी योजनाएं', te: 'రైతుల కోసం ప్రభుత్వ పథకాలు' },
-  'chat.q4': { en: 'Weather advice for sowing', hi: 'बुवाई के लिए मौसम सलाह', te: 'విత్తనం కోసం వాతావరణ సలహా' },
+  'chat.q1': { en: 'Will it rain tomorrow?', hi: 'कल बारिश होगी?', te: 'రేపు వర్షం పడుతుందా?' },
+  'chat.q2': { en: 'Best fertilizer for chilli crop?', hi: 'मिर्च फसल के लिए सबसे अच्छा उर्वरक?', te: 'మిరప కోసం ఉత్తమ ఎరువు?' },
+  'chat.q3': { en: 'What is PM-KISAN scheme?', hi: 'PM-KISAN योजना क्या है?', te: 'PM-కిసాన్ పథకం ఏమిటి?' },
+  'chat.q4': { en: 'How can I rent a tractor?', hi: 'ट्रैक्टर कैसे किराए पर लें?', te: 'ట్రాక్టర్ ఎలా అద్దెకు తీసుకోవాలి?' },
 
   // Weather
   'weather.title': { en: 'Weather Monitoring', hi: 'मौसम निगरानी', te: 'వాతావరణ పర్యవేక్షణ' },

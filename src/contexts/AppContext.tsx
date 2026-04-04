@@ -90,6 +90,8 @@ interface AppContextType {
   gpsLoading: boolean;
   gpsError: string | null;
   requestGPS: () => void;
+  machineFilter: string;
+  setMachineFilter: (type: string) => void;
 }
 
 const AppContext = createContext<AppContextType>({
@@ -112,6 +114,8 @@ const AppContext = createContext<AppContextType>({
   gpsLoading: false,
   gpsError: null,
   requestGPS: () => {},
+  machineFilter: '',
+  setMachineFilter: () => {},
 });
 
 export const useApp = () => useContext(AppContext);
@@ -146,6 +150,7 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   const [gpsCoords, setGpsCoords] = useState<{ lat: number; lon: number } | null>(null);
   const [gpsLoading, setGpsLoading] = useState(false);
   const [gpsError, setGpsError] = useState<string | null>(null);
+  const [machineFilter, setMachineFilter] = useState('');
   const weatherAlertsAdded = useRef(false);
 
   const addNotification = useCallback((n: Omit<Notification, 'id' | 'isRead' | 'createdAt'>) => {
@@ -350,6 +355,7 @@ setWeatherData(formattedData);
       sidebarOpen, setSidebarOpen,
       weatherData, weatherLoading, weatherError, fetchWeather,
       gpsCoords, gpsLoading, gpsError, requestGPS,
+      machineFilter, setMachineFilter,
     }}>
       {children}
     </AppContext.Provider>
