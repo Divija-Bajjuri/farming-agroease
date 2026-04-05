@@ -54,29 +54,29 @@ interface Booking {
 const MACHINE_TYPES = ['Tractor', 'Harvester', 'Rotavator', 'Seed Drill', 'Sprayer', 'Thresher', 'Plough', 'Cultivator'];
 
 const MACHINE_IMAGES: Record<string, string> = {
-  'Tractor': 'https://images.unsplash.com/photo-1592982537447-6f2a6a0c7c18?w=400&h=300&fit=crop',
-  'Harvester': 'https://images.unsplash.com/photo-1628352081506-83c43123ed6d?w=400&h=300&fit=crop',
+  'Tractor': 'https://images.pexels.com/photos/2933243/pexels-photo-2933243.jpeg?cs=srgb&dl=pexels-jk04-2933243.jpg&fm=jpg',
+  'Harvester': 'https://www.deere.com.au/assets/images/region-4/products/harvesting/tseries-combine-r2C001197-1920x1080.jpg',
   'Rotavator': 'https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=400&h=300&fit=crop',
-  'Seed Drill': 'https://images.unsplash.com/photo-1586190848861-99c8a3da799c?w=400&h=300&fit=crop',
-  'Sprayer': 'https://images.unsplash.com/photo-1615816661694-999c9a1a1d47?w=400&h=300&fit=crop',
-  'Thresher': 'https://images.unsplash.com/photo-1592982537447-6f2a6a0c7c18?w=400&h=300&fit=crop',
-  'Plough': 'https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=400&h=300&fit=crop',
-  'Cultivator': 'https://images.unsplash.com/photo-1586190848861-99c8a3da799c?w=400&h=300&fit=crop',
+  'Seed Drill': 'https://th.bing.com/th/id/R.7a829d20410f88979e0bbaf2da670baa?rik=kE9ePd5%2bpG40eA&riu=http%3a%2f%2fien.kverneland.com%2fvar%2fkv%2fstorage%2fimages%2fmedia%2fimages%2fkv_dl_0001.jpg%2f137060-5-eng-GB%2fKV_dl_0001.jpg_productslider.jpg&ehk=jl8ZdcNvbKaFsFE2HFPHADDCpnyJfe3zRzThor6Rrdc%3d&risl=&pid=ImgRaw&r=0',
+  'Sprayer': 'https://tse2.mm.bing.net/th/id/OIP.vW2o4QuuzPCVOrVuZI6qZgHaFC?rs=1&pid=ImgDetMain&o=7&rm=3',
+  'Thresher': 'https://images.unsplash.com/photo-1535040904129-5c4d3b16fdef?w=400&h=300&fit=crop',
+  'Plough': 'https://images.unsplash.com/photo-1599034363259-2560eb3325fc?w=400&h=300&fit=crop',
+  'Cultivator': 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=400&h=300&fit=crop',
 };
 
 const DEFAULT_IMAGE = 'https://images.unsplash.com/photo-1592982537447-6f2a6a0c7c18?w=400&h=300&fit=crop';
 
 const SAMPLE_MACHINES: Machine[] = [
-  { id: '1', name: 'Mahindra 575 DI', type: 'Tractor', pricePerHour: 500, pricePerDay: 3500, location: 'Warangal', contact: '9876543210', available: true, owner: 'Ramesh Kumar', image: 'https://images.unsplash.com/photo-1592982537447-6f2a6a0c7c18?w=400&h=300&fit=crop' },
-  { id: '2', name: 'John Deere 5310', type: 'Tractor', pricePerHour: 600, pricePerDay: 4000, location: 'Karimnagar', contact: '9876543211', available: true, owner: 'Suresh Reddy', image: 'https://images.unsplash.com/photo-1535040904129-5c4d3b16fdef?w=400&h=300&fit=crop' },
-  { id: '3', name: 'Kubota DC-68G', type: 'Harvester', pricePerHour: 1200, pricePerDay: 8000, location: 'Nizamabad', contact: '9876543212', available: true, owner: 'Venkat Rao', image: 'https://images.unsplash.com/photo-1628352081506-83c43123ed6d?w=400&h=300&fit=crop' },
-  { id: '4', name: 'Shaktiman Rotavator', type: 'Rotavator', pricePerHour: 400, pricePerDay: 2500, location: 'Khammam', contact: '9876543213', available: true, owner: 'Prasad Goud', image: 'https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=400&h=300&fit=crop' },
-  { id: '5', name: 'Swaraj 744 FE', type: 'Tractor', pricePerHour: 550, pricePerDay: 3800, location: 'Adilabad', contact: '9876543214', available: false, owner: 'Narasimha', image: 'https://images.unsplash.com/photo-1592982537447-6f2a6a0c7c18?w=400&h=300&fit=crop' },
-  { id: '6', name: 'Preet 949', type: 'Harvester', pricePerHour: 1000, pricePerDay: 7000, location: 'Nalgonda', contact: '9876543215', available: true, owner: 'Srinivas', image: 'https://images.unsplash.com/photo-1628352081506-83c43123ed6d?w=400&h=300&fit=crop' },
-  { id: '7', name: 'Fieldking Seed Drill', type: 'Seed Drill', pricePerHour: 350, pricePerDay: 2000, location: 'Medak', contact: '9876543216', available: true, owner: 'Raju', image: 'https://images.unsplash.com/photo-1586190848861-99c8a3da799c?w=400&h=300&fit=crop' },
-  { id: '8', name: 'Aspee Sprayer', type: 'Sprayer', pricePerHour: 200, pricePerDay: 1200, location: 'Rangareddy', contact: '9876543217', available: true, owner: 'Mahesh', image: 'https://images.unsplash.com/photo-1615816661694-999c9a1a1d47?w=400&h=300&fit=crop' },
-  { id: '9', name: 'Sonalika Tiger', type: 'Tractor', pricePerHour: 450, pricePerDay: 3200, location: 'Mahabubnagar', contact: '9876543218', available: true, owner: 'Balaji', image: 'https://images.unsplash.com/photo-1535040904129-5c4d3b16fdef?w=400&h=300&fit=crop' },
-  { id: '10', name: 'Landforce Cultivator', type: 'Cultivator', pricePerHour: 300, pricePerDay: 1800, location: 'Siddipet', contact: '9876543219', available: true, owner: 'Ganesh', image: 'https://images.unsplash.com/photo-1586190848861-99c8a3da799c?w=400&h=300&fit=crop' },
+  { id: '1', name: 'Mahindra 575 DI', type: 'Tractor', pricePerHour: 500, pricePerDay: 3500, location: 'Warangal', contact: '9876543210', available: true, owner: 'Ramesh Kumar', image: '' },
+  { id: '2', name: 'John Deere 5310', type: 'Tractor', pricePerHour: 600, pricePerDay: 4000, location: 'Karimnagar', contact: '9876543211', available: true, owner: 'Suresh Reddy', image: '' },
+  { id: '3', name: 'Kubota DC-68G', type: 'Harvester', pricePerHour: 1200, pricePerDay: 8000, location: 'Nizamabad', contact: '9876543212', available: true, owner: 'Venkat Rao', image: '' },
+  { id: '4', name: 'Shaktiman Rotavator', type: 'Rotavator', pricePerHour: 400, pricePerDay: 2500, location: 'Khammam', contact: '9876543213', available: true, owner: 'Prasad Goud', image: '' },
+  { id: '5', name: 'Swaraj 744 FE', type: 'Tractor', pricePerHour: 550, pricePerDay: 3800, location: 'Adilabad', contact: '9876543214', available: false, owner: 'Narasimha', image: '' },
+  { id: '6', name: 'Preet 949', type: 'Harvester', pricePerHour: 1000, pricePerDay: 7000, location: 'Nalgonda', contact: '9876543215', available: true, owner: 'Srinivas', image: '' },
+  { id: '7', name: 'Fieldking Seed Drill', type: 'Seed Drill', pricePerHour: 350, pricePerDay: 2000, location: 'Medak', contact: '9876543216', available: true, owner: 'Raju', image: '' },
+  { id: '8', name: 'Aspee Sprayer', type: 'Sprayer', pricePerHour: 200, pricePerDay: 1200, location: 'Rangareddy', contact: '9876543217', available: true, owner: 'Mahesh', image: '' },
+  { id: '9', name: 'Sonalika Tiger', type: 'Tractor', pricePerHour: 450, pricePerDay: 3200, location: 'Mahabubnagar', contact: '9876543218', available: true, owner: 'Balaji', image: '' },
+  { id: '10', name: 'Landforce Cultivator', type: 'Cultivator', pricePerHour: 300, pricePerDay: 1800, location: 'Siddipet', contact: '9876543219', available: true, owner: 'Ganesh', image: '' },
 ];
 
 const MachineryRental: React.FC = () => {
@@ -178,6 +178,7 @@ const filtered = machines.filter(m => {
     
     setBookings(prev => [...prev, newBooking]);
     setBookingModalMachine(null);
+    setShowBookings(true);
     
     addNotification({
       title: t('mach.bookingSuccessTitle'),
@@ -257,36 +258,50 @@ const filtered = machines.filter(m => {
         )}
 
         {/* Bookings */}
-        {showBookings && bookings.length > 0 && (
+        {showBookings && (
           <div className={`${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-100'} border rounded-2xl p-6 mb-6`}>
-            <h3 className={`font-bold text-lg ${darkMode ? 'text-white' : 'text-gray-900'} mb-4`}>{t('mach.myBookings')}</h3>
-            <div className="space-y-3">
-              {bookings.map(b => (
-                <div key={b.id} className={`${darkMode ? 'bg-gray-700/50' : 'bg-gray-50'} rounded-xl p-4`}>
-                  <div className="flex justify-between items-start mb-2">
-                    <div>
-                      <p className={`font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{b.machineName}</p>
-                      <p className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>{b.machineType}</p>
+            
+            <h3 className={`font-bold text-lg ${darkMode ? 'text-white' : 'text-gray-900'} mb-4`}>
+              {t('mach.myBookings')}
+            </h3>
+
+            {bookings.length === 0 ? (
+              <p className={`${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>
+                {language === 'hi' ? 'अभी तक कोई बुकिंग नहीं' : language === 'te' ? 'ఇంకా బుకింగ్ లేదు' : 'No bookings yet'}
+              </p>
+            ) : (
+              <div className="space-y-3">
+                {bookings.map(b => (
+                  <div key={b.id} className={`${darkMode ? 'bg-gray-700/50' : 'bg-gray-50'} rounded-xl p-4`}>
+                    <div className="flex justify-between items-start mb-2">
+                      <div>
+                        <p className={`font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{b.machineName}</p>
+                        <p className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>{b.machineType}</p>
+                      </div>
+                      <span className={`px-3 py-1 rounded-full text-xs font-bold ${
+                        b.status === 'pending' ? 'bg-yellow-100 text-yellow-700' :
+                        b.status === 'approved' ? 'bg-green-100 text-green-700' :
+                        'bg-blue-100 text-blue-700'
+                      }`}>{t(`mach.${b.status}`)}</span>
                     </div>
-                    <span className={`px-3 py-1 rounded-full text-xs font-bold ${
-                      b.status === 'pending' ? 'bg-yellow-100 text-yellow-700' :
-                      b.status === 'approved' ? 'bg-green-100 text-green-700' :
-                      'bg-blue-100 text-blue-700'
-                    }`}>{t(`mach.${b.status}`)}</span>
+                    <div className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>
+                      {b.bookingType === 'hourly' 
+                        ? `${b.fromDate} (${b.fromTime} - ${b.toTime}) - ${b.totalHours} ${t('mach.hours')}`
+                        : `${b.fromDate} ${language === 'hi' ? 'से' : language === 'te' ? 'నుండి' : 'to'} ${b.toDate} (${b.totalDays} ${t('mach.days')})`
+                      }
+                    </div>
+                    <div className="flex justify-between items-center mt-2">
+                      <span className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>📍 {b.location}</span>
+                      <span className={`font-bold text-lg ${darkMode ? 'text-green-400' : 'text-green-700'}`}>₹{b.totalPrice}</span>
+                    </div>
+                    <div className={`text-sm mt-2 ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>
+                      👤 {b.farmerName} | 📞 {b.contactNumber}
+                    </div>
                   </div>
-                  <div className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>
-                    {b.bookingType === 'hourly' 
-                      ? `${b.fromDate} (${b.fromTime} - ${b.toTime}) - ${b.totalHours} hours`
-                      : `${b.fromDate} to ${b.toDate} (${b.totalDays} days)`
-                    }
-                  </div>
-                  <div className="flex justify-between items-center mt-2">
-                    <span className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>📍 {b.location}</span>
-                    <span className={`font-bold text-lg ${darkMode ? 'text-green-400' : 'text-green-700'}`}>₹{b.totalPrice}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
+            )}
+
           </div>
         )}
 

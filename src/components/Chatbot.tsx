@@ -163,8 +163,8 @@ ${feature.steps.join("\n")}
       borderRadius: "12px",
       color: "white",
       marginBottom: "25px"
-    }}
-  >
+    }}>
+
     <h2 style={{ margin: 0 }}>
       🌾 {t("chat.title", language)}
     </h2>

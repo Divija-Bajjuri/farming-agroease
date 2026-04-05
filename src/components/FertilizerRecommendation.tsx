@@ -16,6 +16,15 @@ const SOIL_TYPES = [
   { en: 'Clay', hi: 'चिकनी मिट्टी', te: 'బంకమట్టి' },
 ];
 
+const CROP_NAMES: Record<string, { en: string; hi: string; te: string }> = {
+  Rice: { en: 'Rice', hi: 'धान', te: 'వరి' },
+  Wheat: { en: 'Wheat', hi: 'गेहूं', te: 'గోధుమ' },
+  Cotton: { en: 'Cotton', hi: 'कपास', te: 'పత్తి' },
+  Maize: { en: 'Maize', hi: 'मक्का', te: 'మొక్కజొన్న' },
+  Tomato: { en: 'Tomato', hi: 'टमाटर', te: 'టమాటా' },
+  Sugarcane: { en: 'Sugarcane', hi: 'गन्ना', te: 'చెరకు' },
+};
+
 const CROP_DATA: Record<string, { n: number; p: number; k: number; organic: Record<string, string>; schedule: Record<string, string> }> = {
   Rice: { n: 120, p: 60, k: 40, organic: { en: 'Vermicompost 5t/ha + Neem cake 250kg/ha + Azolla as green manure', hi: 'वर्मीकम्पोस्ट 5t/ha + नीम खली 250kg/ha + एज़ोला हरी खाद', te: 'వర్మీకంపోస్ట్ 5t/ha + వేపపిండి 250kg/ha + అజోల్లా పచ్చిరొట్ట' }, schedule: { en: 'Basal: 50% N + full P + full K at transplanting. Top dress: 25% N at tillering, 25% N at panicle initiation', hi: 'रोपाई पर: 50% N + पूरा P + पूरा K। टॉप ड्रेस: 25% N कल्ले निकलने पर, 25% N बाली निकलने पर', te: 'నాట్ల సమయంలో: 50% N + పూర్తి P + పూర్తి K. టాప్ డ్రెస్: 25% N పిలకలు వేసేటప్పుడు, 25% N కంకి వచ్చేటప్పుడు' } },
   Wheat: { n: 150, p: 60, k: 40, organic: { en: 'FYM 10t/ha + Vermicompost 3t/ha + Azotobacter seed treatment', hi: 'FYM 10t/ha + वर्मीकम्पोस्ट 3t/ha + एज़ोटोबैक्टर बीज उपचार', te: 'FYM 10t/ha + వర్మీకంపోస్ట్ 3t/ha + అజోటోబాక్టర్ విత్తన శుద్ధి' }, schedule: { en: 'Basal: 50% N + full P + full K at sowing. Top dress: 25% N at CRI stage, 25% N at boot stage', hi: 'बुवाई पर: 50% N + पूरा P + पूरा K। 25% N CRI अवस्था पर, 25% N बूट अवस्था पर', te: 'విత్తనం వేసేటప్పుడు: 50% N + పూర్తి P + పూర్తి K. 25% N CRI దశలో, 25% N బూట్ దశలో' } },
@@ -65,13 +74,22 @@ const FertilizerRecommendation: React.FC = () => {
               <label className={`block text-sm font-semibold ${darkMode ? 'text-gray-200' : 'text-gray-700'} mb-2`}>{t('fert.cropType')}</label>
               <div className="grid grid-cols-3 gap-2">
                 {Object.keys(CROP_DATA).map(crop => (
-                  <button key={crop} onClick={() => setSelectedCrop(crop)}
-                    className={`py-3 rounded-xl text-sm font-semibold transition ${
-                      selectedCrop === crop ? 'bg-green-600 text-white' : `${darkMode ? 'bg-gray-700 text-gray-300' : 'bg-gray-100 text-gray-700'} hover:bg-green-50 dark:hover:bg-green-900/20`
-                    }`}>
-                    {crop}
-                  </button>
-                ))}
+  <button
+    key={crop}
+    onClick={() => setSelectedCrop(crop)}
+    className={`py-3 rounded-xl text-sm font-semibold transition ${
+      selectedCrop === crop
+        ? 'bg-green-600 text-white'
+        : `${darkMode ? 'bg-gray-700 text-gray-300' : 'bg-gray-100 text-gray-700'} hover:bg-green-50 dark:hover:bg-green-900/20`
+    }`}
+  >
+    {language === 'hi'
+      ? CROP_NAMES[crop].hi
+      : language === 'te'
+      ? CROP_NAMES[crop].te
+      : CROP_NAMES[crop].en}
+  </button>
+))}
               </div>
             </div>
 

@@ -1,16 +1,21 @@
 import React, { createContext, useContext, useState, useCallback, useEffect, useRef } from 'react';
 import { supabase } from '@/lib/supabase';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export type AppPage = 'home' | 'dashboard' | 'chatbot' | 'weather' | 'fertilizer' | 'machinery' | 'schemes' | 'profile';
 
 interface Notification {
   id: string;
-  title: string;
-  message: string;
+  title: Record<string,string>;
+  message: Record<string,string>
   type: 'info' | 'warning' | 'success' | 'error';
   isRead: boolean;
   createdAt: string;
 }
+/*interface Notification {
+  id: string;
+  title: Record<string,string>;
+  message: Record<string,string>;*/ 
 
 export interface WeatherCurrent {
   temp: number;
@@ -120,7 +125,8 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   const [currentPage, setCurrentPage] = useState<AppPage>('home');
   const [darkMode, setDarkMode] = useState(() => localStorage.getItem('krishi-dark') === 'true');
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [notifications, setNotifications] = useState<Notification[]>([
+  const { language } = useLanguage();
+  /*const [notifications, setNotifications] = useState<Notification[]>([
     {
       id: 'welcome-1',
       title: 'Welcome to KrishiMitra!',
@@ -137,8 +143,41 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       isRead: false,
       createdAt: new Date().toISOString(),
     },
-  ]);
-
+  ]);*/
+ const [notifications, setNotifications] = useState<Notification[]>([
+  {
+    id: 'welcome-1',
+    title: {
+      en: 'Welcome to KrishiMitra!',
+      hi: 'कृषिमित्र में आपका स्वागत है!',
+      te: 'కృషిమిత్రకు స్వాగతం!'
+    },
+    message: {
+      en: 'Start by scanning your crop leaves for disease detection.',
+      hi: 'फसल की पत्तियों को स्कैन करके रोग पहचान शुरू करें।',
+      te: 'పంట ఆకులను స్కాన్ చేసి వ్యాధి గుర్తింపును ప్రారంభించండి.'
+    },
+    type: 'info',
+    isRead: false,
+    createdAt: new Date().toISOString(),
+  },
+  {
+    id: 'pm-kisan-1',
+    title: {
+      en: 'PM Kisan Update',
+      hi: 'पीएम किसान अपडेट',
+      te: 'పీఎం కిసాన్ అప్‌డేట్'
+    },
+    message: {
+      en: 'New installment of ₹2,000 released. Check your bank account.',
+      hi: '₹2000 की नई किस्त जारी हुई। अपना बैंक खाता देखें।',
+      te: '₹2000 కొత్త విడత విడుదలైంది. మీ బ్యాంక్ ఖాతా చూడండి.'
+    },
+    type: 'success',
+    isRead: false,
+    createdAt: new Date().toISOString(),
+  },
+]);
   // Weather state
   const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
   const [weatherLoading, setWeatherLoading] = useState(false);

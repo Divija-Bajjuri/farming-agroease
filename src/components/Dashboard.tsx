@@ -187,8 +187,17 @@ const Dashboard: React.FC = () => {
                       : 'bg-blue-500'
                     }`} />
                     <div className="min-w-0">
-                      <p className={`font-semibold text-sm ${darkMode ? 'text-white' : 'text-gray-900'} truncate`}>{notif.title}</p>
-                      <p className={`text-xs mt-0.5 ${darkMode ? 'text-gray-400' : 'text-gray-600'} line-clamp-2`}>{notif.message}</p>
+                      <p className={`font-semibold text-sm ${darkMode ? 'text-white' : 'text-gray-900'} truncate`}>
+  {typeof notif.title === "object"
+    ? notif.title[language] || notif.title.en
+    : notif.title}
+</p>
+
+<p className={`text-xs mt-0.5 ${darkMode ? 'text-gray-400' : 'text-gray-600'} line-clamp-2`}>
+  {typeof notif.message === "object"
+    ? notif.message[language] || notif.message.en
+    : notif.message}
+</p>
                     </div>
                   </div>
                 </div>
