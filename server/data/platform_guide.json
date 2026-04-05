@@ -1,0 +1,147 @@
+{
+  "weather": {
+    "explanation": {
+      "en": "The Weather page helps farmers check rain predictions, temperature, humidity, wind speed, and a 7-day weather forecast for their farming location. This helps in planning sowing and harvesting times.",
+      "hi": "मौसम पेज किसानों को बारिश का पूर्वानुमान, तापमान, नमी, हवा की गति और अपने खेत के लिए 7 दिन का मौसम जानने में मदद करता है। इससे बुवाई और कटाई का समय प्लान करने में मदद मिलती है।",
+      "te": "Weather pageలో వర్ష Prediction, temperature, humidity, wind speed, మరియు 7 days weather forecast చూడగలుగుతావు. ఇది విత్తకు (sowing) harvest time plan చేయటానికి ఉపయోgistadi."
+    },
+    "steps": {
+      "en": [
+        "Open the KrishiMitra dashboard",
+        "Look at the main menu or sidebar",
+        "Click on the 'Weather' option",
+        "Allow location access when prompted",
+        "View the current weather and 7-day forecast"
+      ],
+      "hi": [
+        "कृषिमित्र डैशबोर्ड खोलें",
+        "मुख्य मेनू या साइडबार देखें",
+        "'मौसम' विकल्प पर क्लिक करें",
+        "जब पूछे तो स्थान की अनुमति दें",
+        "वर्तमान मौसम और 7 दिन का पूर्वानुमान देखें"
+      ],
+      "te": [
+        "KrishiMitra dashboard ni open cheyandi",
+        "Main menu or sidebar choopinchandi",
+        "'Weather' option paite click cheyandi",
+        "Location access ivvagane allow cheyandi",
+        "Current weather and 7-day forecast ni choopinchandi"
+      ]
+    },
+    "navCommand": "OPEN WEATHER PAGE"
+  },
+  "fertilizer": {
+    "explanation": {
+      "en": "The Fertilizer Guide page helps farmers find the right fertilizer based on their crop type and soil type. It provides recommendations for nitrogen, phosphorus, and potassium needed for different crops.",
+      "hi": "उर्वरक गाइड पेज किसानों को अपनी फसल प्रकार और मिट्टी के प्रकार के आधार पर सही उर्वरक खोजने में मदद करता है। यह विभिन्न फसलों के लिए नाइट्रोजन, फॉस्फोरस और पोटैशियम की सिफारिश करता है।",
+      "te": "Fertilizer Guide pagelo farmers ki crop type, soil type ఆధారంగా right fertilizer kaniuskochu. Nitrogen, phosphorus, potassium recommendations istadi."
+    },
+    "steps": {
+      "en": [
+        "Open the KrishiMitra dashboard",
+        "Click on the 'Fertilizer' option in the menu",
+        "Select your crop type from the dropdown",
+        "Choose your soil type (sandy, clay, loamy, etc.)",
+        "Enter your farm size in acres",
+        "Click on 'Get Recommendation' button",
+        "View the fertilizer suggestions with NPK values"
+      ],
+      "hi": [
+        "कृषिमित्र डैशबोर्ड खोलें",
+        "मेनू में 'उर्वरक' विकल्प पर क्लिक करें",
+        "ड्रॉपडाउन से अपना फसल प्रकार चुनें",
+        "अपना मिट्टी प्रकार चुनें (बलुई, चिकनी, दोमट आदि)",
+        "एकड़ में अपने खेत का आकार दर्ज करें",
+        "'सिफारिश प्राप्त करें' बटन पर क्लिक करें",
+        "NPK मानों के साथ उर्वरक सुझाव देखें"
+      ],
+      "te": [
+        "KrishiMitra dashboard ni open cheyandi",
+        "Menu lo 'Fertilizer' option paite click cheyandi",
+        "Dropdown nundi crop type ni select cheyandi",
+        "Soil type (sandy, clay, loamy, etc.) ni select cheyandi",
+        "Acres lo farm size enter cheyandi",
+        "'Get Recommendation' button paite click cheyandi",
+        "NPK values kulalo fertilizer suggestions ni choopinchandi"
+      ]
+    },
+    "navCommand": "OPEN FERTILIZER PAGE"
+  },
+  "machinery": {
+    "explanation": {
+      "en": "The Rent Machines page helps farmers find and rent agricultural equipment like tractors, harvesters, sprayers, and other farm machinery. Farmers can search by location and machine type.",
+      "hi": "मशीन किराये का पेज किसानों को ट्रैक्टर, हार्वेस्टर, स्प्रेयर और अन्य कृषि मशीनरी जैसे कृषि उपकरण खोजने और किराये पर लेने में मदद करता है। किसान स्थान और मशीन प्रकार से खोज सकते हैं।",
+      "te": "Rent Machines pagelo farmers ki tractors, harvesters, sprayers, anni farm machinery kani search chesi rent kosam istam. Farmers location and machine type ante search cheyochu."
+    },
+    "steps": {
+      "en": [
+        "Open the KrishiMitra dashboard",
+        "Click on the 'Machinery' option in the menu",
+        "Browse available machines or use the search filter",
+        "Select your preferred machine by clicking on it",
+        "Check the machine details, price, and availability",
+        "Click on 'Book Now' to reserve the machine",
+        "Fill in the booking details (date, time, duration)",
+        "Confirm your booking"
+      ],
+      "hi": [
+        "कृषिमित्र डैशबोर्ड खोलें",
+        "मेनू में 'मशीनरी' विकल्प पर क्लिक करें",
+        "उपलब्ध मशीन देखें या सर्च फ़िल्टर का उपयोग करें",
+        "क्लिक करके अपनी पसंदीदा मशीन चुनें",
+        "मशीन विवरण, कीमत और उपलब्धता जांचें",
+        "मशीन बुक करने के लिए 'अभी बुक करें' पर क्लिक करें",
+        "बुकिंग विवरण भरें (तारीख, समय, अवधि)",
+        "अपनी बुकिंग की पुष्टि करें"
+      ],
+      "te": [
+        "KrishiMitra dashboard ni open cheyandi",
+        "Menu lo 'Machinery' option paite click cheyandi",
+        "Available machines ni browse cheyandi or search filter use cheyandi",
+        "Click chesi preferred machine ni select cheyandi",
+        "Machine details, price, availability ni check cheyandi",
+        "'Book Now' click cheyandi machine reserve cheyadaniki",
+        "Booking details (date, time, duration) fill cheyandi",
+        "Booking ni confirm cheyandi"
+      ]
+    },
+    "navCommand": "OPEN MACHINERY PAGE"
+  },
+  "schemes": {
+    "explanation": {
+      "en": "The Government Schemes page provides information about farmer subsidies and schemes like PM-KISAN, crop insurance, and other government benefits. Farmers can read about eligibility and apply.",
+      "hi": "सरकारी योजनाओं का पेज किसानों को पीएम-किसान, फसल बीमा और अन्य सरकारी लाभ जैसी किसान सब्सिडी और योजनाओं की जानकारी प्रदान करता है। किसान पात्रता पढ़कर आवेदन कर सकते हैं।",
+      "te": "Government Schemes pagelo farmers ki PM-KISAN, crop insurance, anni government benefits gurthu istadi. Farmers eligibility read chesi apply cheyochu."
+    },
+    "steps": {
+      "en": [
+        "Open the KrishiMitra dashboard",
+        "Click on the 'Govt Schemes' option in the menu",
+        "Browse through the list of available schemes",
+        "Click on a scheme to read more details",
+        "Check the eligibility criteria",
+        "Read about the benefits and how to apply",
+        "Click on 'Apply' or 'Learn More' to proceed"
+      ],
+      "hi": [
+        "कृषिमित्र डैशबोर्ड खोलें",
+        "मेनू में 'सरकारी योजनाएं' विकल्प पर क्लिक करें",
+        "उपलब्ध योजनाओं की सूची देखें",
+        "अधिक विवरण पढ़ने के लिए किसी योजना पर क्लिक करें",
+        "पात्रता मानदंड जांचें",
+        "लाभ और आवेदन कैसे करें पढ़ें",
+        "आगे बढ़ने के लिए 'आवेदन करें' या 'और जानें' पर क्लिक करें"
+      ],
+      "te": [
+        "KrishiMitra dashboard ni open cheyandi",
+        "Menu lo 'Govt Schemes' option paite click cheyandi",
+        "Available schemes list ni browse cheyandi",
+        "More details read anukunte scheme paite click cheyandi",
+        "Eligibility criteria ni check cheyandi",
+        "Benefits, how to apply read cheyandi",
+        "'Apply' or 'Learn More' click cheyandi proceed cheyadaniki"
+      ]
+    },
+    "navCommand": "OPEN SCHEMES PAGE"
+  }
+}

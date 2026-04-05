@@ -1,0 +1,27 @@
+{
+  "dashboard": {
+    "english": "The dashboard shows an overview of farming information. Farmers can see alerts, quick actions and access different sections like chatbot, weather, fertilizer recommendation and machinery.",
+    "telugu": "డాష్‌బోర్డ్‌లో వ్యవసాయానికి సంబంధించిన ముఖ్యమైన సమాచారం కనిపిస్తుంది. ఇక్కడి నుండి చాట్‌బాట్, వాతావరణం, ఎరువు సూచనలు మరియు యంత్రాల విభాగాలకు వెళ్లవచ్చు.",
+    "hindi": "डैशबोर्ड में खेती से जुड़ी मुख्य जानकारी दिखाई देती है। यहाँ से चैटबॉट, मौसम, उर्वरक सलाह और मशीनरी अनुभाग तक पहुँचा जा सकता है।"
+  },
+  "weather": {
+    "english": "To check weather: open the Weather section, allow location access, and view temperature, rainfall, humidity and wind information.",
+    "telugu": "వాతావరణాన్ని తెలుసుకోవడానికి వాతావరణ విభాగాన్ని తెరవండి. మీ ప్రదేశాన్ని అనుమతించండి. తరువాత ఉష్ణోగ్రత, వర్షపాతం, ఆర్ద్రత మరియు గాలి వేగం వివరాలు కనిపిస్తాయి.",
+    "hindi": "मौसम देखने के लिए मौसम अनुभाग खोलें। अपने स्थान की अनुमति दें। इसके बाद तापमान, वर्षा, आर्द्रता और हवा की जानकारी दिखाई देगी।"
+  },
+  "fertilizer": {
+    "english": "To get fertilizer recommendation: select crop type, choose soil type, enter farm size, and click the recommendation button.",
+    "telugu": "ఎరువు సూచన పొందడానికి ముందుగా పంట రకాన్ని ఎంచుకోండి. తరువాత నేల రకాన్ని ఎంచుకోండి. పొలం పరిమాణాన్ని నమోదు చేసి సూచన బటన్ నొక్కండి.",
+    "hindi": "उर्वरक सलाह प्राप्त करने के लिए फसल प्रकार चुनें, मिट्टी का प्रकार चुनें, खेत का आकार दर्ज करें और सुझाव बटन दबाएँ।"
+  },
+  "machinery": {
+    "english": "Farmers can rent machinery by opening the machinery section, selecting available equipment and clicking the booking option.",
+    "telugu": "వ్యవసాయ యంత్రాలను అద్దెకు తీసుకోవడానికి యంత్రాల విభాగాన్ని తెరవండి. అందుబాటులో ఉన్న యంత్రాన్ని ఎంచుకుని బుకింగ్ ఎంపికను నొక్కండి.",
+    "hindi": "कृषि मशीन किराये पर लेने के लिए मशीनरी अनुभाग खोलें। उपलब्ध मशीन चुनें और बुकिंग विकल्प दबाएँ।"
+  },
+  "schemes": {
+    "english": "Government schemes section provides information about schemes like PM-Kisan and crop insurance. Farmers can read eligibility and apply.",
+    "telugu": "ప్రభుత్వ పథకాల విభాగంలో పీఎం కిసాన్ వంటి పథకాల వివరాలు ఉంటాయి. అర్హత తెలుసుకుని దరఖాస్తు చేయవచ్చు.",
+    "hindi": "सरकारी योजनाओं के अनुभाग में पीएम किसान जैसी योजनाओं की जानकारी मिलती है। किसान पात्रता पढ़कर आवेदन कर सकते हैं।"
+  }
+}

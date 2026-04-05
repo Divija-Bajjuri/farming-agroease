@@ -1,0 +1,83 @@
+[
+  {
+    "question": "వాతావరణ సమాచారం ఎలా చూడాలి?",
+    "answer": " వాతావరణ సమాచారాన్ని తెలుసుకోవడానికి పై మెనులో ఉన్న 'వాతావరణం' విభాగాన్ని తెరవండి. మీ ప్రదేశాన్ని అనుమతించండి లేదా మీ గ్రామం లేదా నగరం పేరును వెతకండి. అక్క ఉష్ణోగ్రత, వర్షపాతం, గాలి వేగం మరియు తేమ వంటి వివరాలు కనిపిస్తాయి. "
+  },
+  {
+    "question": "పంటకు సరైన ఎరువు ఎలా తెలుసుకోవాలి?",
+    "answer": " పంటకు సరైన ఎరువు తెలుసుకోవడానికి 'ఎరువు సూచన' విభాగాన్ని తెరవండి. ముందుగా మీ పంట రకాన్ని ఎంచుకోండి.తరువాత నేలరకాన్ని ఎంచుకోండి.తరువాత పొలం పరిమాణాన్ని నమోదు చేయండి. 'సూచన పొందండి' బటన్‌ను నొక్కితే మీ పంటకు ఎరువు ప建议你."
+  },
+  {
+    "question": " వ్యవసాయ యంత్రాలను ఎలా అద్దెకు తీసుకోవాలి?",
+    "answer": " వ్యవసాయ యంత్రాలను అద్దెకు తీసుకోవడానికి 'అందు' లేద 'యంత్రాల' భాగానికి వెళ్ళు.అక్క ట్రాక్టర్, హార్వెస్టర్, ఇతర యంత్రాలు ఉంటాయి. మీకు కావలసింది ఎంచుకుని 'బుక్' బటన్‌ను నొక్కు."
+  },
+  {
+    "question": " (schemes) / (yojna) / (karalu) / PM-KISAN",
+    "answer": " (schemes) / (yojna) / (karalu) / PM-KISAN",
+    "answer": " PM-KISAN, Kisan Credit Card, crop insurance, subsidy schemes - visit 'GovernmentSchemes' section for details. "
+  },
+  {
+    "question": " ఈ చాట్‌బాట్‌లో వ్యవసాయ ప్రశ్నలను ఎలా అడగాలి?",
+    "answer": " ఈ చాట్‌బాట్‌లో మీకు ఉన్న వ్యవసాయ ప్రశ్నను దిగువ టైప్ చేయండి. ఉదాహరణ: 'pests', 'diseases', 'fertilizers', 'weather', 'schemes'. "
+  },
+  {
+    "question": "vati pantaki saraina eruvu emiti",
+    "answer": " Vati pantaki saraina eruvu: nitrogen, phosphorus, potassium. First sowing lo phosphorus potash veyyandi. Taruvata growth lo nitrogen eruvu veyyandi."
+  },
+  {
+    "question": "pattalo neetini eppudu ivvali",
+    "answer": " Pantaki neetini soil moisture antha ivvandi. Summer lo evvaru lagginchi untundi. Morning or evening lo neetini ivvandi."
+  },
+  {
+    "question": "pattalo purugulu vasthe emi cheyali",
+    "answer": " Purugulu kaninappudu first affected leaves ni inspect cheyyandi. Proper pesticide use cheyyandi. Agri expert ni consult cheyyandi."
+  },
+  {
+    "question": "mattilo teda emi telusukoval",
+    "answer": " Mattilo tedam cheyali: soil ni hands lo patti choodu. Soil gattiga unte moisture undi. Poyyi unte water avasaram. Telusukuni water ivvandi."
+  },
+  {
+    "question": "pata vyadhistulu ela gurinchi",
+    "answer": " Pata vyadhistulu gurinchi: leaves lo machchalu, pasupu rang, edipoyina leaves kanapadatam - aa disease sagina. Appardu proper medicine use cheyyandi."
+  },
+  {
+    "question": "vyasamaya yantralni use cheste labam emiti",
+    "answer": " Yantralni use cheste: work faster, labor cost taggutundi, samay save aipotundi."
+  },
+  {
+    "question": "pata ki saraina vithnanalu ela echukovali",
+    "answer": " Local weather anukuntam vithnanalu echukovali. Certified seeds konukkotam."
+  },
+  {
+    "question": "varsham padda avakasam undho ledho ela telusukoval",
+    "answer": " Weather section ki vellipondi region select cheste varsham varaku telusukovalsindi."
+  },
+  {
+    "question": "pata digubadi ela pesukoli",
+    "answer": " Proper seeds, eruvulu, neeti nirmanam, purugu mandulu veniyanam - inpam digubadi pesukoli."
+  },
+  {
+    "question": "pata kotha ki saraina samayam ela telusukoval",
+    "answer": " Pata puragallaga perugina ginjalu gattiga marripothunnappudu kotha ki ready. Leaves rang change chesepudu gurinchi."
+  },
+  {
+    "question": "pattalo sahaja eruvulu emiti",
+    "answer": " Pasuvulu eruvu, compost, green manure - appudu soil saranna pesukuntundi."
+  },
+  {
+    "question": "pattalo kallu mokatlani ela tholagavali",
+    "answer": " Kallu mokatlani hands lo thisai teyyali or required ante pesticide use cheyyandi."
+  },
+  {
+    "question": "vyasamayaniki prasthanu sahaya ela poddatali",
+    "answer": " Government schemes section ki vellipondi schemes ni choosi apply cheyyalasindi."
+  },
+  {
+    "question": "pata ki saraina neeti nirmanam ela cheyali",
+    "answer": " Pata avasaranni batti neeti ivvandi. Adugu neeti or takku neeti ivvadamlo pada kosam damage vastundi."
+  },
+  {
+    "question": "matta pariksha edi enti cheyali",
+    "answer": " Matti pariksha cheyali: soil lo unna poshakalanu telusukovalsindi. Apara satrana eruvulni use cheyyalasindi."
+  }
+]

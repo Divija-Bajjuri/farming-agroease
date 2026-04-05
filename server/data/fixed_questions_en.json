@@ -1,0 +1,82 @@
+[
+  {
+    "question": "how to check weather information",
+    "answer": " To check weather, open the 'Weather' section from the top menu. Allow location access or search for your village/city. You will see temperature, rainfall, wind speed and humidity."
+  },
+  {
+    "question": "how to get fertilizer recommendation",
+    "answer": " To get fertilizer recommendation, open 'Fertilizer Suggestion' section. First select your crop type. Then choose soil type. Then enter farm size. Click the button to see the recommended fertilizer."
+  },
+  {
+    "question": "how to rent farm machinery",
+    "answer": " To rent farm machinery, go to the 'Machinery' section. There you will find available tractors, harvesters and equipment. Choose your machine and click 'Book' button."
+  },
+  {
+    "question": "how to apply for government schemes",
+    "answer": " For government schemes, open 'Government Schemes' section. There you will find schemes like PM-KISAN, crop insurance. Each scheme has eligibility and benefits. Click apply to go to the official website."
+  },
+  {
+    "question": "how to ask farming questions in this chatbot",
+    "answer": " In this chatbot, type your farming question in the box below. You can also use the microphone to speak. Example: 'pests', 'diseases', 'fertilizers', 'weather', 'schemes'."
+  },
+  {
+    "question": "what is the right fertilizer for paddy",
+    "answer": " For paddy, nitrogen, phosphorus and potash are needed. Apply phosphorus and potash at sowing time. Apply nitrogen when the crop is growing."
+  },
+  {
+    "question": "when to give water to crops",
+    "answer": " Give water to crops based on soil moisture. In summer more water is needed. Give water in morning or evening."
+  },
+  {
+    "question": "what to do if pests come in crops",
+    "answer": " If pests appear, first check affected leaves. Use proper pesticide. If needed, consult an agricultural expert."
+  },
+  {
+    "question": "how to know moisture in soil",
+    "answer": " To know soil moisture: hold soil in your hand. If soil is packed, there is moisture. If dry, water is needed."
+  },
+  {
+    "question": "how to identify crop diseases",
+    "answer": " Crop disease signs: spots on leaves, yellow color change, dried leaves. Then use proper medicine."
+  },
+  {
+    "question": "what is benefit of using farm machinery",
+    "answer": " Using machinery: work gets done faster, labor cost reduces, time is saved."
+  },
+  {
+    "question": "how to choose right seeds for crops",
+    "answer": " Choose seeds suitable for your local weather. Buy certified seeds."
+  },
+  {
+    "question": "how to know if rain is expected",
+    "answer": " Go to Weather section and select your region to see rain forecast."
+  },
+  {
+    "question": "how to increase crop yield",
+    "answer": " Proper seeds, fertilizers, water management and pesticides increase yield."
+  },
+  {
+    "question": "how to know right time for harvest",
+    "answer": " Crop is ready for harvest when fully grown and grains become hard. Can also check by leaf color change."
+  },
+  {
+    "question": "what are natural fertilizers for crops",
+    "answer": " Animal dung, compost and green manure are natural fertilizers that improve soil health."
+  },
+  {
+    "question": "how to remove weeds from crops",
+    "answer": " Remove weeds by hand or use herbicide if needed."
+  },
+  {
+    "question": "how to get government help for farming",
+    "answer": " Go to Government Schemes section to see available schemes and apply."
+  },
+  {
+    "question": "how to do proper water management for crops",
+    "answer": " Give water based on crop need. Too much or too little water damages the crop."
+  },
+  {
+    "question": "why do soil testing",
+    "answer": " Soil testing tells how much nutrients are in soil. Then you can use proper fertilizers."
+  }
+]

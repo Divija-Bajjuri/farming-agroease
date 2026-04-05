@@ -1,0 +1,81 @@
+[
+  {
+    "question": "mausam ki jankari kaise dekhe",
+    "answer": " Mausam ki jankari ke liye upar wale menu mein 'mausam' section kholein. Apna location allow karein ya apna gaon ya shahar ka naam search karein. Wahan temperature, barsat, hawa ki speed aur nam dikhai degi."
+  },
+  {
+    "question": "fasal ke liye sahi fertilizer kaise jane",
+    "answer": " Fasal ke liye sahi fertilizer pane ke liye 'fertilizer suggestion' section kholein. Pehle apni fasal ka prakar choose karein. Phir mitti ka prakar choose karein. Phir khet ka size enter karein. Button dabane par fertilizer dikhai dega."
+  },
+  {
+    "question": "kriyi machine kaise hire karein",
+    "answer": " Kriyi machine hire karne ke liye 'machines' section kholein. Wahan available tractor, harvester aur equipment ki list dikhai degi. Apne hisab se machine choose karke 'book' button dabayein."
+  },
+  {
+    "question": "sarkari yojnaon ke liye kaise apply karein",
+    "answer": " Sarkari yojna ke liye 'government schemes' section kholein. Wahan PM-KISAN, crop insurance jaisi yojnaon ki detail hogi. Har yojna mein eligibility aur benefits likha hoga. Apply button dabane par website par jayenge."
+  },
+  {
+    "question": "is chatbot mein kisan se related question kaise puche",
+    "answer": " Is chatbot mein apna kisan question niche wale box mein type karein ya microphone use karke bolein. Example: 'pest', 'disease', 'fertilizer', 'mausam', 'scheme'."
+  },
+  {
+    "question": "dhhan ke liye sahi fertilizer kya hai",
+    "answer": " Dhan ke liye nitrogen, phosphorus aur potash chahiye. Pehle bootein ke samay phosphorus aur potash dalein. Phir fasal badhne par nitrogen dalein."
+  },
+  {
+    "question": "fasal ko pani kab dena chahiye",
+    "answer": " Fasal ko pani mitti ki moisture ke hisab se dena chahiye. Garmi mein zyada chahiye. Subah ya sham ko pani dena accha hai."
+  },
+  {
+    "question": "fasal mein keede lag gaye to kya karein",
+    "answer": " Keede lagne par pehle affected leaves dekhein. Sahi pesticide use karein. Jarurat ho to kisan expert se raay lein."
+  },
+  "question": "mitti mein moisture kaise janein",
+    "answer": " Mitti ko haath se packar dekhein. Mitti sakht hai to moisture hai. Sukha hai to pani chahiye. Telusukuni pani dein."
+  },
+  {
+    "question": "fasal ki bimari kaise pehchanein",
+    "answer": " Fasal ki bimari: leaves par daag, peela rang, sukhe leaves - ye bimari ke sure signal hain. Tab sahi medicine use karein."
+  },
+  {
+    "question": "kriyi machine use karne se kya fayda hai",
+    "answer": " Machine se kaam jaldi khatam hota hai. Mazdoori ka kharcha kam hota hai. Samay bachta hai."
+  },
+  {
+    "question": "fasal ke liye sahi beej kaise chunein",
+    "answer": " Apne region ke hisab se beej chunein. Certified beej khareedna accha hai."
+  },
+  {
+    "question": "barish hone ki sochant jaane kaise",
+    "answer": " Weather section mein jakar apna region select karein to barish ki sochant jaan sakte hain."
+  },
+  {
+    "question": "fasal ki prodyogiki kaise badhayein",
+    "answer": " Sahi beej, fertilizer, pani aur pesticide use karne se prodyogiki badhti hai."
+  },
+  {
+    "question": "fasal kaatne ka sahi samay kaise jaanein",
+    "answer": " Fasal puri tarah phutne aur daane sakht hone par kaatne ke liye tayyar hota hai. Leaves ke rang se bhi jaanein."
+  },
+  {
+    "question": "fasal ke liye kya natural fertilizer hai",
+    "answer": " Jaanwar ka gobar, compost aur green manure - ye sab natural fertilizers mitti ko poshan dete hain."
+  },
+  {
+    "question": "fasal mein judhai ke gadbad kaise hataein",
+    "answer": " Judhai ko haath se nikaalna chahiye ya zarurat ho to chemical use karein."
+  },
+  {
+    "question": "sarkari madad kaise lein",
+    "answer": " Government schemes section mein jakar available schemes dekhein aur apply karein."
+  },
+  {
+    "question": "fasal ke liye sahi pani management kaise karein",
+    "answer": " Fasal ki zarurat ke hisab se pani dein. Zyada ya kam pani se fasal ko nuksan hota hai."
+  },
+  {
+    "question": "mitti pariksha kyun karein",
+    "answer": " Mitti pariksha se mitti mein kitna poshan hai ye jaan sakte hain. Iske hisab se sahi fertilizer use kar sakte hain."
+  }
+]

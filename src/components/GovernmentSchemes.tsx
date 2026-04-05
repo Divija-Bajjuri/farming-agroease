@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { useLanguage } from '@/contexts/LanguageContext';
-import { useApp } from '@/contexts/AppContext';
+import React, { useState } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { useApp } from "@/contexts/AppContext";
 
 interface Scheme {
   id: string;
@@ -15,156 +15,563 @@ interface Scheme {
 }
 
 const schemes: Scheme[] = [
-  {
-    id: '1', icon: 'M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z', color: 'from-green-500 to-emerald-600',
-    name: { en: 'PM-KISAN', hi: 'पीएम-किसान', te: 'పీఎం-కిసాన్' },
-    description: { en: 'Pradhan Mantri Kisan Samman Nidhi provides income support of ₹6,000 per year to all farmer families across India.', hi: 'प्रधानमंत्री किसान सम्मान निधि भारत भर के सभी किसान परिवारों को ₹6,000 प्रति वर्ष की आय सहायता प्रदान करती है।', te: 'ప్రధాన మంత్రి కిసాన్ సమ్మాన్ నిధి భారతదేశంలోని అన్ని రైతు కుటుు సంబాలకంవత్సరానికి ₹6,000 ఆదాయ మద్దతు అందిస్తుంది.' },
-    eligibility: { en: 'All farmer families with cultivable land. Small and marginal farmers are prioritized.', hi: 'खेती योग्य भूमि वाले सभी किसान परिवार। छोटे और सीमांत किसानों को प्राथमिकता।', te: 'సాగు భూమి ఉన్న అన్ని రైతు కుటుంబాలు. చిన్న మరియు సన్నకారు రైతులకు ప్రాధాన్యత.' },
-    benefits: { en: '₹6,000 per year in 3 installments of ₹2,000 each, directly to bank account.', hi: '₹2,000 की 3 किस्तों में ₹6,000 प्रति वर्ष, सीधे बैंक खाते में।', te: 'సంవత్సరానికి ₹6,000, ₹2,000 చొప్పున 3 వాయిదాలలో, నేరుగా బ్యాంక్ ఖాతాకు.' },
-    howToApply: { en: '1. Visit pmkisan.gov.in\n2. Click "New Farmer Registration"\n3. Enter Aadhaar number\n4. Fill in land and bank details\n5. Submit and track status', hi: '1. pmkisan.gov.in पर जाएं\n2. "नया किसान पंजीकरण" पर क्लिक करें\n3. आधार नंबर दर्ज करें\n4. भूमि और बैंक विवरण भरें\n5. जमा करें और स्थिति ट्रैक करें', te: '1. pmkisan.gov.in కి వెళ్ళండి\n2. "కొత్త రైతు నమోదు" క్లిక్ చేయండి\n3. ఆధార్ నంబర్ నమోదు చేయండి\n4. భూమి మరియు బ్యాంక్ వివరాలు నింపండి\n5. సమర్పించి స్థితిని ట్రాక్ చేయండి' },
-    link: 'https://pmkisan.gov.in',
-  },
-  {
-    id: '2', icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z', color: 'from-blue-500 to-indigo-600',
-    name: { en: 'PM Fasal Bima Yojana', hi: 'पीएम फसल बीमा योजना', te: '�ீஎம் ஃபசல் பீமா யோஜன' },
-    description: { en: 'Crop insurance scheme providing financial support to farmers in case of crop failure due to natural calamities, pests, or diseases.', hi: 'प्राकृतिक आपदाओं, कीटों या रोगों के कारण फसल नुकसान होने पर किसानों को वित्तीय सहायता प्रदान करने वाली फसल बीमा योजना।', te: ' природни хала, бубре или болестима. Пружа финансијску подршку фармерима.' },
-    eligibility: { en: 'All farmers including sharecroppers and tenant farmers growing notified crops.', hi: 'अधिसूचित फसलें उगाने वाले सभी किसान, बटाईदार और किरायेदार किसान सहित।', te: 'Всички фермери, включително арендатори.' },
-    benefits: { en: 'Premium: 2% for Kharif, 1.5% for Rabi, 5% for commercial crops. Government pays remaining premium.', hi: 'प्रीमियम: खरीफ 2%, रबी 1.5%, वाणिज्यिक फसलें 5%। शेष प्रीमियम सरकार देती है।', te: 'Премија: 2% за Хариф, 1,5% за Раби.' },
-    howToApply: { en: '1. Visit nearest bank or CSC center\n2. Fill crop insurance form\n3. Provide land records and Aadhaar\n4. Pay premium amount\n5. Get insurance policy', hi: '1. नजदीकी बैंक या CSC केंद्र जाएं\n2. फसल बीमा फॉर्म भरें\n3. भूमि रिकॉर्ड और आधार दें\n4. प्रीमियम राशि जमा करें\n5. बीमा पॉलिसी प्राप्त करें', te: '1. Посетите најближу банку или ЦСЦ центар\n2. Попуните образац за осигурање\n3. Доставите записе о земљи и Аadhaar\n4. Платите премију\n5. Добијте полиси осигурања' },
-    link: 'https://pmfby.gov.in',
-  },
-  {
-    id: '3', icon: 'M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z', color: 'from-amber-500 to-orange-600',
-    name: { en: 'Kisan Credit Card', hi: 'किसान क्रेडिट कार्ड', te: 'కిసాన్ క్రెడిట్ కార్డ్' },
-    description: { en: 'Provides farmers with affordable credit for agricultural needs including crop production, post-harvest, and consumption.', hi: 'किसानों को फसल उत्पादन, कटाई के बाद और उपभोग सहित कृषि जरूरतों के लिए सस्ता ऋण प्रदान करता है।', te: 'रैतानांला पिक उत्पादन, कटाई नंतर आणि वापरीसाठी स्वस्त रोखी पुरवितो.' },
-    eligibility: { en: 'All farmers, including individual/joint borrowers who are owner cultivators.', hi: 'सभी किसान, जिसमें व्यक्तिगत/संयुक्त उधारकर्ता शामिल हैं जो मालिक-कृषक हैं।', te: 'सर्व शेतकरी, त्यामध्ये मालक शेतकरी.' },
-    benefits: { en: 'Credit up to ₹3 lakh at 4% interest (with subsidy). Flexible repayment. Insurance coverage included.', hi: '4% ब्याज पर ₹3 लाख तक ऋण (सब्सिडी सहित)। लचीला पुनर्भुगतान। बीमा कवरेज शामिल।', te: '4% व्याजदराने ₹3 लाखांपर्यंत क्रेडिट.' },
-    howToApply: { en: '1. Visit any bank branch\n2. Fill KCC application form\n3. Submit land documents\n4. Provide Aadhaar and photos\n5. Bank processes within 14 days', hi: '1. किसी भी बैंक शाखा में जाएं\n2. KCC आवेदन पत्र भरें\n3. भूमि दस्तावेज जमा करें\n4. आधार और फोटो दें\n5. बैंक 14 दिनों में प्रक्रिया करता है', te: '1. कोणत्याही बँक शाखेला भेट द्या\n2. KCC अर्ज भरा\n3. जमीन कागदपत्र सादर करा\n4. आधार आणि फोटो द्या\n5. बँक 14 दिवसांत प्रक्रिया करतो' },
-    link: 'https://bankofbaroda.in/kisan-credit-card',
-  },
-  {
-    id: '4', icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4', color: 'from-teal-500 to-green-600',
-    name: { en: 'Soil Health Card', hi: 'सॉइल हेल्थ कार्ड', te: ' soil health card' },
-    description: { en: 'Free soil testing and health card for every farmer with nutrient status and fertilizer recommendations.', hi: 'हर किसान के लिए मुफ्त मिट्टी परीक्षण और स्वास्थ्य कार्ड, पोषक तत्वों की स्थिति और उर्वरक सिफारिशों के साथ।', te: 'प्रत्येक शेतकऱ्यासाठी मोफत माती चाचणी आणि आरोग्य कार्ड.' },
-    eligibility: { en: 'All farmers across India. Free of cost.', hi: 'भारत भर के सभी किसान। मुफ्त।', te: 'भारतातील सर्व शेतकरी. मोफत.' },
-    benefits: { en: 'Free soil testing every 2 years. Crop-wise fertilizer recommendations. Improved soil health awareness.', hi: 'हर 2 साल में मुफ्त मिट्टी परीक्षण। फसल-वार उर्वरक सिफारिशें। मिट्टी स्वास्थ्य जागरूकता।', te: 'प्रत्येक 2 वर्षांनी मोफत माती चाचणी.' },
-    howToApply: { en: '1. Visit soilhealth.dac.gov.in\n2. Register with Aadhaar\n3. Collect soil sample as guided\n4. Submit to nearest testing center\n5. Receive card with recommendations', hi: '1. soilhealth.dac.gov.in पर जाएं\n2. आधार से रजिस्टर करें\n3. निर्देशानुसार मिट्टी का नमूना लें\n4. नजदीकी परीक्षण केंद्र में जमा करें\n5. सिफारिशों के साथ कार्ड प्राप्त करें', te: '1. soilhealth.dac.gov.in ला भेट द्या\n2. आधार नोंदणी करा\n3. मार्गदर्शनानुसार मातीचा नमूना गोळा करा\n4. जवळच्या चाचणी केंद्रात सादर करा\n5. शिफारसींसह कार्ड प्राप्त करा' },
-    link: 'https://soilhealth.dac.gov.in',
-  },
-  {
-    id: '5', icon: 'M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z', color: 'from-purple-500 to-pink-600',
-    name: { en: 'PM Kisan Maan Dhan Yojana', hi: 'पीएम किसान मानधन योजना', te: 'पीएम शेतकरी मानधन योजना' },
-    description: { en: 'Pension scheme for small and marginal farmers providing ₹3,000 monthly pension after age 60.', hi: 'छोटे और सीमांत किसानों के लिए पेंशन योजना, 60 वर्ष की आयु के बाद ₹3,000 मासिक पेंशन।', te: 'लहान आणि सीमांत शेतकऱ्यांसाठी पेंशन योजना, वय 60 नंतर मासिक ₹3,000 पेंशन.' },
-    eligibility: { en: 'Small and marginal farmers aged 18-40 with less than 2 hectares of land.', hi: '18-40 वर्ष के छोटे और सीमांत किसान, 2 हेक्टेयर से कम भूमि वाले।', te: '18-40 वर्ष वयाचे लहान आणि सीमांत शेतकरी, 2 हेक्टरपेक्षा कमी जमीन.' },
-    benefits: { en: '₹3,000 monthly pension after 60. Government matches farmer contribution.', hi: '60 के बाद ₹3,000 मासिक पेंशन। सरकार किसान के योगदान के बराबर देती है।', te: '60 नंतर मासिक ₹3,000 पेंशन. सरकार शेतकऱ्याच्या योगदानाशी जुळवून घेते.' },
-    howToApply: { en: '1. Visit nearest CSC center\n2. Carry Aadhaar and bank passbook\n3. Fill enrollment form\n4. Choose monthly contribution\n5. Auto-debit from bank account', hi: '1. नजदीकी CSC केंद्र जाएं\n2. आधार और बैंक पासबुक ले जाएं\n3. नामांकन फॉर्म भरें\n4. मासिक योगदान चुनें\n5. बैंक खाते से ऑटो-डेबिट', te: '1. जवळच्या CSC केंद्राला भेट द्या\n2. आधार आणि बँक पासबुक घेऊन जा\n3. नोंदणी फॉर्म भरा\n4. मासिक योगदान निवडा\n5. बँक खात्यातून स्वयं-डेबिट' },
-    link: 'https://maandhan.in',
-  },
-  {
-    id: '6', icon: 'M13 10V3L4 14h7v7l9-11h-7z', color: 'from-red-500 to-pink-600',
-    name: { en: 'KUSUM Yojana', hi: 'कुसुम योजना', te: 'కుసుమ్ యోజన' },
-    description: { en: 'Solar pump scheme for farmers to install solar pumps for irrigation and sell excess power to grid.', hi: 'सिंचाई के लिए सोलर पंप लगाने और अतिरिक्त बिजली बेचने के लिए किसानों के लिए सोलर पंप योजना।', te: 'తెట లోపల ఇరిగేషన్‌కు సోలర్ Pumpలను ఇన్‌స్టాళ్ చేసుకుని, ఎక్కువ విద్యుత్‌ను గ్రిడ్‌కు వिक్స్వాటి.' },
-    eligibility: { en: 'All farmers with agricultural land. Priority to farmers with borewells.', hi: 'कृषि भूमि वाले सभी किसान। बोरवेल वाले किसानों को प्राथमिकता।', te: 'అన్ని రైతులు. బోర్‌బాయిలు ఉన్న వారికి ప్రాధాన్యత.' },
-    benefits: { en: 'Subsidy up to 60% on solar pumps. Earn by selling excess electricity.', hi: 'सोलर पंप पर 60% तक सब्सिडी। अतिरिक्त बिजली बेचकर कमाएं।', te: '60% వరకు सब्सिडी. ఎక్కువ Electricity వాటం.' },
-    howToApply: { en: '1. Visit mnre.gov.in\n2. Apply online for solar pump\n3. Get feasibility approval\n4. Install solar pump\n5. Connect to grid and start earning', hi: '1. mnre.gov.in पर जाएं\n2. सोलर पंप के लिए ऑनलाइन आवेदन करें\n3. व्यवहार्यता अनुमोदन प्राप्त करें\n4. सोलर पंप स्थापित करें\n5. ग्रिड से कनेक्ट करें और कमाएं', te: '1. mnre.gov.in कडे जा\n2. Solar Pump करिता Apply कर\n3. Feasibility मंजूर करा\n4. Solar Pump बसवा\n5. Grid ला जोडा आणि कमाई करा' },
-    link: 'https://mnre.gov.in/kusum',
-  },
-  {
-    id: '7', icon: 'M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z', color: 'from-cyan-500 to-blue-600',
-    name: { en: 'Agricultural Technology Management Agency', hi: 'कृषि प्रौद्योगिकी प्रबंधन अभिकरण', te: 'ATMAA' },
-    description: { en: 'Provides farmers with latest agricultural technologies, training, and extension services.', hi: 'किसानों को नवीनतम कृषि प्रौद्योगिकियां, प्रशिक्षण और विस्तार सेवाएं प्रदान करता है।', te: 'Latest agricultural technologies, training, extension services.' },
-    eligibility: { en: 'All farmers in rural areas.', hi: 'ग्रामीण क्षेत्रों के सभी किसान।', te: 'ग्रामीण भागातील सर्व शेतकरी.' },
-    benefits: { en: 'Free training on modern farming. Access to latest seeds and techniques.', hi: 'आधुनिक खेती पर मुफ्त प्रशिक्षण। नवीनतम बीज और तकनीकों तक पहुंच।', te: 'आधुनिक शेतीवर मोफत प्रशिक्षण.' },
-    howToApply: { en: '1. Visit your nearest ATMAA office\n2. Register as a farmer\n3. Get training schedule\n4. Attend training programs\n5. Apply for subsidies', hi: '1. अपने निकटतम ATMAA कार्यालय जाएं\n2. किसान के रूप में पंजीकरण करें\n3. प्रशिक्षण कार्यक्रम प्राप्त करें\n4. प्रशिक्षण कार्यक्रमों में भाग लें\n5. सब्सिडी के लिए आवेदन करें', te: '1. जवळचे ATMAA कार्यालय भेट द्या\n2. शेतकरी म्हणून नोंदणी करा\n3. प्रशिक्षण कार्यक्रम मिळवा\n4. प्रशिक्षण कार्यक्रमांमध्ये सहभागी व्हा\n5. सब्सिडीसाठी अर्ज करा' },
-    link: 'https://atmaa.nic.in',
-  },
-  {
-    id: '8', icon: 'M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253', color: 'from-indigo-500 to-purple-600',
-    name: { en: 'Fasal Calculator', hi: 'फसल कैलकुलेटर', te: 'పంట లెక్కింపు' },
-    description: { en: 'Calculate profit/loss for crops based on investment, yield, and market prices.', hi: 'निवेश, उपज और बाजार मूल्य के आधार पर फसल के लिए लाभ/हानि की गणना करें।', te: 'Investment, yield, market prices based profit/loss calculation.' },
-    eligibility: { en: 'All farmers can use for free.', hi: 'सभी किसान मुफ्त में उपयोग कर सकते हैं।', te: 'सर्व शेतकरी विनामूल्य वापरू शकतात.' },
-    benefits: { en: 'Free tool. Make informed decisions about crops. Plan your farming.', hi: 'मुफ्त उपकरण। फसलों के बारे में सूचित निर्णय लें। अपनी खेती की योजना बनाएं।', te: 'मोफत साधन. पिकांबद्दल माहिती निर्णय घ्या.' },
-    howToApply: { en: '1. Visit fasalcalculator.gov.in\n2. Select your state\n3. Enter crop details\n4. Add investment costs\n5. See profit/loss estimate', hi: '1. fasalcalculator.gov.in पर जाएं\n2. अपना राज्य चुनें\n3. फसल विवरण दर्ज करें\n4. निवेश लागत जोड़ें\n5. लाभ/हानि अनुमान देखें', te: '1. fasalcalculator.gov.in ला भेट द्या\n2. तुमचे राज्य निवडा\n3. पिक तपशील भरा\n4. गुंतवणूक खर्च जोडा\n5. नफा/तोटा अंदाज पहा' },
-    link: 'https://fasalcalculator.gov.in',
-  },
+{
+id:"1",
+icon:"M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2",
+color:"from-green-500 to-emerald-600",
+name:{
+en:"PM-KISAN",
+hi:"पीएम किसान",
+te:"పీఎం కిసాన్"
+},
+description:{
+en:"Provides ₹6000 yearly financial support to farmers.",
+hi:"किसानों को ₹6000 वार्षिक आर्थिक सहायता प्रदान करता है।",
+te:"రైతులకు సంవత్సరానికి ₹6000 ఆర్థిక సహాయం అందిస్తుంది."
+},
+eligibility:{
+en:"All farmer families with cultivable land.",
+hi:"खेती योग्य भूमि वाले सभी किसान परिवार पात्र हैं।",
+te:"సాగు భూమి ఉన్న అన్ని రైతు కుటుంబాలు అర్హులు."
+},
+benefits:{
+en:"₹6000 per year in three installments.",
+hi:"₹6000 प्रति वर्ष तीन किस्तों में दिया जाता है।",
+te:"సంవత్సరానికి ₹6000 మూడు విడతలలో ఇస్తారు."
+},
+howToApply:{
+en:"1.Visit pmkisan.gov.in\n2.Register farmer\n3.Enter Aadhaar\n4.Submit details",
+hi:"1.pmkisan.gov.in जाएं\n2.पंजीकरण करें\n3.आधार दर्ज करें\n4.फॉर्म जमा करें",
+te:"1.pmkisan.gov.in కి వెళ్లండి\n2.రైతు నమోదు చేయండి\n3.ఆధార్ నమోదు చేయండి\n4.వివరాలు సమర్పించండి"
+},
+link:"https://pmkisan.gov.in"
+},
+
+{
+id:"2",
+icon:"M9 12l2 2 4-4",
+color:"from-blue-500 to-indigo-600",
+name:{
+en:"PM Fasal Bima Yojana",
+hi:"प्रधानमंत्री फसल बीमा योजना",
+te:"ప్రధాన మంత్రి పంట బీమా పథకం"
+},
+description:{
+en:"Insurance scheme protecting farmers from crop loss.",
+hi:"फसल नुकसान होने पर किसानों को बीमा सुरक्षा देता है।",
+te:"పంట నష్టానికి రైతులకు బీమా రక్షణ ఇస్తుంది."
+},
+eligibility:{
+en:"All farmers growing notified crops.",
+hi:"सूचित फसल उगाने वाले किसान पात्र हैं।",
+te:"నిర్దేశిత పంటలు పండించే రైతులు అర్హులు."
+},
+benefits:{
+en:"Protection from natural disaster crop losses.",
+hi:"प्राकृतिक आपदाओं से फसल सुरक्षा।",
+te:"సహజ విపత్తుల వల్ల పంట నష్టానికి రక్షణ."
+},
+howToApply:{
+en:"1.Visit pmfby.gov.in\n2.Register crop\n3.Pay premium",
+hi:"1.pmfby.gov.in जाएं\n2.फसल पंजीकरण करें\n3.प्रीमियम जमा करें",
+te:"1.pmfby.gov.in కి వెళ్లండి\n2.పంట నమోదు చేయండి\n3.ప్రీమియం చెల్లించండి"
+},
+link:"https://pmfby.gov.in"
+},
+
+{
+id:"3",
+icon:"M3 10h18",
+color:"from-amber-500 to-orange-600",
+name:{
+en:"Kisan Credit Card",
+hi:"किसान क्रेडिट कार्ड",
+te:"కిసాన్ క్రెడిట్ కార్డ్"
+},
+description:{
+en:"Provides farmers easy credit for agriculture.",
+hi:"किसानों को खेती के लिए आसान ऋण सुविधा देता है।",
+te:"రైతులకు వ్యవసాయం కోసం సులభమైన రుణం ఇస్తుంది."
+},
+eligibility:{
+en:"Farmers with agricultural land.",
+hi:"भूमि वाले किसान पात्र हैं।",
+te:"వ్యవసాయ భూమి ఉన్న రైతులు అర్హులు."
+},
+benefits:{
+en:"Loan up to ₹3 lakh at low interest.",
+hi:"₹3 लाख तक ऋण सुविधा।",
+te:"₹3 లక్షల వరకు రుణం."
+},
+howToApply:{
+en:"1.Visit bank\n2.Fill KCC form\n3.Submit documents",
+hi:"1.बैंक जाएं\n2.KCC फॉर्म भरें\n3.दस्तावेज जमा करें",
+te:"1.బ్యాంక్ కి వెళ్లండి\n2.KCC ఫారం నింపండి\n3.పత్రాలు సమర్పించండి"
+},
+link:"https://www.myscheme.gov.in/schemes/kcc"
+},
+
+{
+id:"4",
+icon:"M9 5H7",
+color:"from-teal-500 to-green-600",
+name:{
+en:"Soil Health Card",
+hi:"सॉइल हेल्थ कार्ड",
+te:"మట్టి ఆరోగ్య కార్డు"
+},
+description:{
+en:"Provides soil testing and fertilizer recommendations.",
+hi:"मिट्टी परीक्षण और उर्वरक सुझाव देता है।",
+te:"మట్టి పరీక్ష మరియు ఎరువు సూచనలు ఇస్తుంది."
+},
+eligibility:{
+en:"All farmers across India.",
+hi:"भारत के सभी किसान पात्र हैं।",
+te:"భారతదేశంలోని అన్ని రైతులు అర్హులు."
+},
+benefits:{
+en:"Free soil testing every two years.",
+hi:"हर दो साल में मुफ्त मिट्टी जांच।",
+te:"ప్రతి రెండు సంవత్సరాలకు ఉచిత మట్టి పరీక్ష."
+},
+howToApply:{
+en:"1.Visit soilhealth.dac.gov.in\n2.Register\n3.Submit soil sample",
+hi:"1.soilhealth.dac.gov.in जाएं\n2.पंजीकरण करें\n3.मिट्टी नमूना जमा करें",
+te:"1.soilhealth.dac.gov.in కు వెళ్లండి\n2.నమోదు చేయండి\n3.మట్టి నమూనా ఇవ్వండి"
+},
+link:"https://soilhealth.dac.gov.in"
+},
+{
+id:"9",
+icon:"M12 8c-1.657 0-3 .895-3 2",
+color:"from-green-600 to-lime-600",
+name:{
+en:"e-NAM (National Agriculture Market)",
+hi:"ई-नाम कृषि बाजार",
+te:"ఈ-నామ్ జాతీయ వ్యవసాయ మార్కెట్"
+},
+description:{
+en:"Online trading platform connecting farmers to national agricultural markets.",
+hi:"किसानों को राष्ट्रीय कृषि बाजार से जोड़ने वाला ऑनलाइन प्लेटफॉर्म।",
+te:"రైతులను జాతీయ వ్యవసాయ మార్కెట్‌తో కలిపే ఆన్‌లైన్ వేదిక."
+},
+eligibility:{
+en:"Farmers registered with local APMC markets.",
+hi:"APMC बाजार में पंजीकृत किसान।",
+te:"APMC మార్కెట్‌లో నమోదు చేసిన రైతులు."
+},
+benefits:{
+en:"Better crop price discovery and nationwide trading.",
+hi:"बेहतर फसल मूल्य और देशभर में व्यापार की सुविधा।",
+te:"పంటలకు మంచి ధర మరియు దేశవ్యాప్తంగా వ్యాపారం."
+},
+howToApply:{
+en:"1.Visit enam.gov.in\n2.Register farmer\n3.Link bank account\n4.Start trading",
+hi:"1.enam.gov.in जाएं\n2.पंजीकरण करें\n3.बैंक लिंक करें\n4.व्यापार शुरू करें",
+te:"1.enam.gov.in కు వెళ్లండి\n2.నమోదు చేయండి\n3.బ్యాంక్ లింక్ చేయండి\n4.వ్యాపారం ప్రారంభించండి"
+},
+link:"https://www.enam.gov.in"
+},
+
+{
+id:"10",
+icon:"M5 3v4M3 5h4",
+color:"from-blue-600 to-cyan-600",
+name:{
+en:"Paramparagat Krishi Vikas Yojana",
+hi:"परंपरागत कृषि विकास योजना",
+te:"పారంపరిక వ్యవసాయ అభివృద్ధి పథకం"
+},
+description:{
+en:"Promotes organic farming among farmers.",
+hi:"किसानों में जैविक खेती को बढ़ावा देती है।",
+te:"రైతుల్లో సేంద్రీయ వ్యవసాయాన్ని ప్రోత్సహిస్తుంది."
+},
+eligibility:{
+en:"Farmers willing to practice organic farming.",
+hi:"जैविक खेती करने वाले किसान।",
+te:"సేంద్రీయ వ్యవసాయం చేసే రైతులు."
+},
+benefits:{
+en:"Financial support for organic farming practices.",
+hi:"जैविक खेती के लिए आर्थिक सहायता।",
+te:"సేంద్రీయ వ్యవసాయానికి ఆర్థిక సహాయం."
+},
+howToApply:{
+en:"1.Visit agriculture department\n2.Register farmer group\n3.Apply for subsidy",
+hi:"1.कृषि विभाग जाएं\n2.समूह पंजीकरण करें\n3.सब्सिडी के लिए आवेदन करें",
+te:"1.వ్యవసాయ శాఖకు వెళ్లండి\n2.సమూహ నమోదు చేయండి\n3.సబ్సిడీ కోసం దరఖాస్తు చేయండి"
+},
+link:"https://pgsindia-ncof.gov.in"
+},
+
+{
+id:"11",
+icon:"M12 6.253v13",
+color:"from-purple-600 to-indigo-600",
+name:{
+en:"National Food Security Mission",
+hi:"राष्ट्रीय खाद्य सुरक्षा मिशन",
+te:"జాతీయ ఆహార భద్రత మిషన్"
+},
+description:{
+en:"Improves production of rice, wheat and pulses.",
+hi:"चावल, गेहूं और दालों का उत्पादन बढ़ाने की योजना।",
+te:"బియ్యం, గోధుమలు మరియు పప్పు ఉత్పత్తి పెంచే పథకం."
+},
+eligibility:{
+en:"Farmers cultivating rice, wheat or pulses.",
+hi:"चावल, गेहूं और दाल उगाने वाले किसान।",
+te:"బియ్యం, గోధుమలు, పప్పు పండించే రైతులు."
+},
+benefits:{
+en:"Subsidy on seeds, machinery and farming tools.",
+hi:"बीज और कृषि उपकरणों पर सब्सिडी।",
+te:"విత్తనాలు మరియు వ్యవసాయ పరికరాలపై సబ్సిడీ."
+},
+howToApply:{
+en:"1.Visit agriculture office\n2.Register crop details\n3.Apply for support",
+hi:"1.कृषि कार्यालय जाएं\n2.फसल विवरण दर्ज करें\n3.आवेदन करें",
+te:"1.వ్యవసాయ కార్యాలయానికి వెళ్లండి\n2.పంట వివరాలు నమోదు చేయండి\n3.దరఖాస్తు చేయండి"
+},
+link:"https://nfsm.gov.in"
+},
+
+{
+id:"12",
+icon:"M13 10V3L4 14",
+color:"from-yellow-600 to-orange-600",
+name:{
+en:"Rashtriya Krishi Vikas Yojana",
+hi:"राष्ट्रीय कृषि विकास योजना",
+te:"జాతీయ వ్యవసాయ అభివృద్ధి పథకం"
+},
+description:{
+en:"Supports states to increase agricultural productivity.",
+hi:"कृषि उत्पादकता बढ़ाने के लिए राज्यों को सहायता।",
+te:"వ్యవసాయ ఉత్పత్తి పెంచేందుకు రాష్ట్రాలకు సహాయం."
+},
+eligibility:{
+en:"Farmers through state agriculture departments.",
+hi:"राज्य कृषि विभाग के माध्यम से किसान।",
+te:"రాష్ట్ర వ్యవసాయ శాఖ ద్వారా రైతులు."
+},
+benefits:{
+en:"Funding for irrigation, seeds, and farm infrastructure.",
+hi:"सिंचाई और कृषि अवसंरचना के लिए सहायता।",
+te:"పారుదల మరియు వ్యవసాయ మౌలిక సదుపాయాలకు సహాయం."
+},
+howToApply:{
+en:"1.Visit agriculture office\n2.Submit proposal\n3.Apply subsidy",
+hi:"1.कृषि कार्यालय जाएं\n2.प्रस्ताव जमा करें\n3.सब्सिडी लें",
+te:"1.వ్యవసాయ కార్యాలయానికి వెళ్లండి\n2.ప్రతిపాదన ఇవ్వండి\n3.సబ్సిడీ పొందండి"
+},
+link:"https://rkvy.nic.in"
+},
+
+{
+id:"13",
+icon:"M3 10h18",
+color:"from-red-500 to-pink-600",
+name:{
+en:"Pradhan Mantri Krishi Sinchayee Yojana",
+hi:"प्रधानमंत्री कृषि सिंचाई योजना",
+te:"ప్రధాన మంత్రి వ్యవసాయ సించాయీ పథకం"
+},
+description:{
+en:"Improves irrigation facilities for farmers.",
+hi:"किसानों के लिए सिंचाई सुविधा बढ़ाने की योजना।",
+te:"రైతులకు పారుదల సౌకర్యం మెరుగుపరచే పథకం."
+},
+eligibility:{
+en:"Farmers needing irrigation support.",
+hi:"सिंचाई सहायता चाहने वाले किसान।",
+te:"పారుదల అవసరం ఉన్న రైతులు."
+},
+benefits:{
+en:"Subsidy on drip irrigation and sprinklers.",
+hi:"ड्रिप सिंचाई पर सब्सिडी।",
+te:"డ్రిప్ మరియు స్ప్రింక్లర్ పై సబ్సిడీ."
+},
+howToApply:{
+en:"1.Visit agriculture office\n2.Apply irrigation scheme\n3.Receive subsidy",
+hi:"1.कृषि कार्यालय जाएं\n2.योजना आवेदन करें\n3.सब्सिडी प्राप्त करें",
+te:"1.వ్యవసాయ కార్యాలయానికి వెళ్లండి\n2.పథకం కోసం దరఖాస్తు చేయండి\n3.సబ్సిడీ పొందండి"
+},
+link:"https://pmksy.gov.in"
+},
+
+{
+id:"14",
+icon:"M5 3v4M3 5h4",
+color:"from-green-600 to-teal-600",
+name:{
+en:"National Mission for Sustainable Agriculture",
+hi:"राष्ट्रीय सतत कृषि मिशन",
+te:"జాతీయ స్థిర వ్యవసాయ మిషన్"
+},
+description:{
+en:"Promotes sustainable farming practices and climate-resilient agriculture.",
+hi:"टिकाऊ खेती और जलवायु अनुकूल कृषि को बढ़ावा देता है।",
+te:"స్థిరమైన వ్యవసాయం మరియు వాతావరణ అనుకూల వ్యవసాయాన్ని ప్రోత్సహిస్తుంది."
+},
+eligibility:{
+en:"Farmers practicing sustainable agriculture.",
+hi:"सतत खेती करने वाले किसान।",
+te:"స్థిరమైన వ్యవసాయం చేసే రైతులు."
+},
+benefits:{
+en:"Support for water conservation, soil health, and climate adaptation.",
+hi:"जल संरक्षण और मिट्टी स्वास्थ्य के लिए सहायता।",
+te:"నీటి సంరక్షణ మరియు మట్టి ఆరోగ్యానికి సహాయం."
+},
+howToApply:{
+en:"1.Visit agriculture department\n2.Apply for scheme\n3.Submit documents",
+hi:"1.कृषि विभाग जाएं\n2.योजना के लिए आवेदन करें\n3.दस्तावेज जमा करें",
+te:"1.వ్యవసాయ శాఖకు వెళ్లండి\n2.పథకం కోసం దరఖాస్తు చేయండి\n3.పత్రాలు సమర్పించండి"
+},
+link:"https://nmsa.dac.gov.in"
+},
+
+{
+id:"15",
+icon:"M12 6v6l4 2",
+color:"from-yellow-500 to-orange-600",
+name:{
+en:"Gramin Bhandaran Yojana",
+hi:"ग्रामीण भंडारण योजना",
+te:"గ్రామీణ నిల్వ పథకం"
+},
+description:{
+en:"Supports farmers to build warehouses and storage facilities.",
+hi:"किसानों को गोदाम और भंडारण सुविधा बनाने में मदद करता है।",
+te:"రైతులకు గిడ్డంగులు నిర్మించేందుకు సహాయం చేస్తుంది."
+},
+eligibility:{
+en:"Farmers, farmer groups, and cooperatives.",
+hi:"किसान, किसान समूह और सहकारी समितियाँ।",
+te:"రైతులు మరియు రైతు సమూహాలు."
+},
+benefits:{
+en:"Subsidy for warehouse construction.",
+hi:"गोदाम निर्माण पर सब्सिडी।",
+te:"గిడ్డంగి నిర్మాణానికి సబ్సిడీ."
+},
+howToApply:{
+en:"1.Visit NABARD office\n2.Apply for warehouse subsidy\n3.Submit land documents",
+hi:"1.NABARD कार्यालय जाएं\n2.सब्सिडी के लिए आवेदन करें\n3.दस्तावेज जमा करें",
+te:"1.NABARD కార్యాలయానికి వెళ్లండి\n2.సబ్సిడీ కోసం దరఖాస్తు చేయండి\n3.పత్రాలు సమర్పించండి"
+},
+link:"https://nabard.org"
+},
+
+{
+id:"16",
+icon:"M3 10h18",
+color:"from-blue-500 to-indigo-600",
+name:{
+en:"Sub Mission on Agricultural Mechanization",
+hi:"कृषि मशीनीकरण उप मिशन",
+te:"వ్యవసాయ యంత్రీకరణ ఉప మిషన్"
+},
+description:{
+en:"Encourages farmers to adopt modern agricultural machinery.",
+hi:"किसानों को आधुनिक कृषि मशीनों का उपयोग करने के लिए प्रोत्साहित करता है।",
+te:"రైతులు ఆధునిక వ్యవసాయ యంత్రాలు ఉపయోగించేందుకు ప్రోత్సహిస్తుంది."
+},
+eligibility:{
+en:"All farmers and farmer groups.",
+hi:"सभी किसान और किसान समूह।",
+te:"అన్ని రైతులు మరియు రైతు సమూహాలు."
+},
+benefits:{
+en:"Subsidy for tractors, harvesters, and farm machines.",
+hi:"ट्रैक्टर और कृषि मशीनों पर सब्सिडी।",
+te:"ట్రాక్టర్ మరియు యంత్రాలపై సబ్సిడీ."
+},
+howToApply:{
+en:"1.Visit agriculture office\n2.Apply for machinery subsidy\n3.Submit documents",
+hi:"1.कृषि कार्यालय जाएं\n2.मशीनरी सब्सिडी के लिए आवेदन करें\n3.दस्तावेज जमा करें",
+te:"1.వ్యవసాయ కార్యాలయానికి వెళ్లండి\n2.యంత్రాల సబ్సిడీ కోసం దరఖాస్తు చేయండి\n3.పత్రాలు సమర్పించండి"
+},
+link:"https://agrimachinery.nic.in"
+},
+
+{
+id:"17",
+icon:"M12 6.253v13",
+color:"from-purple-500 to-pink-600",
+name:{
+en:"Pradhan Mantri Annadata Aay Sanrakshan Abhiyan",
+hi:"प्रधानमंत्री अन्नदाता आय संरक्षण अभियान",
+te:"ప్రధాన మంత్రి అన్నదాత ఆదాయ సంరక్షణ పథకం"
+},
+description:{
+en:"Ensures farmers receive fair price for their crops.",
+hi:"किसानों को उनकी फसल के लिए उचित मूल्य सुनिश्चित करता है।",
+te:"రైతులకు పంటలకు సరైన ధర అందేలా చేస్తుంది."
+},
+eligibility:{
+en:"Farmers selling crops in government markets.",
+hi:"सरकारी मंडियों में फसल बेचने वाले किसान।",
+te:"ప్రభుత్వ మార్కెట్లలో పంట అమ్మే రైతులు."
+},
+benefits:{
+en:"Price support and MSP benefits.",
+hi:"न्यूनतम समर्थन मूल्य का लाभ।",
+te:"MSP ధర మద్దతు."
+},
+howToApply:{
+en:"1.Register in mandi\n2.Sell crops at MSP centers",
+hi:"1.मंडी में पंजीकरण करें\n2.MSP केंद्र पर बेचें",
+te:"1.మార్కెట్‌లో నమోదు చేయండి\n2.MSP కేంద్రంలో అమ్మండి"
+},
+link:"https://pmkisan.gov.in"
+},
+
+{
+id:"18",
+icon:"M13 10V3L4 14",
+color:"from-red-500 to-orange-600",
+name:{
+en:"Integrated Scheme on Agriculture Marketing",
+hi:"एकीकृत कृषि विपणन योजना",
+te:"సమగ్ర వ్యవసాయ మార్కెటింగ్ పథకం"
+},
+description:{
+en:"Improves agricultural marketing infrastructure.",
+hi:"कृषि विपणन संरचना को बेहतर बनाता है।",
+te:"వ్యవసాయ మార్కెటింగ్ మౌలిక సదుపాయాలను మెరుగుపరుస్తుంది."
+},
+eligibility:{
+en:"Farmers and agri entrepreneurs.",
+hi:"किसान और कृषि उद्यमी।",
+te:"రైతులు మరియు వ్యవసాయ వ్యాపారులు."
+},
+benefits:{
+en:"Funding for markets, cold storage, and logistics.",
+hi:"बाजार और कोल्ड स्टोरेज के लिए सहायता।",
+te:"మార్కెట్లు మరియు కోల్డ్ స్టోరేజ్‌కు సహాయం."
+},
+howToApply:{
+en:"1.Visit agriculture office\n2.Apply scheme\n3.Submit proposal",
+hi:"1.कृषि कार्यालय जाएं\n2.योजना आवेदन करें\n3.प्रस्ताव जमा करें",
+te:"1.వ్యవసాయ కార్యాలయానికి వెళ్లండి\n2.పథకం కోసం దరఖాస్తు చేయండి\n3.ప్రతిపాదన ఇవ్వండి"
+},
+link:"https://agmarknet.gov.in"
+},
+
+{
+id:"19",
+icon:"M12 8c-1.657 0-3 .895-3 2",
+color:"from-cyan-500 to-blue-600",
+name:{
+en:"Pradhan Mantri Formalisation of Micro Food Processing Enterprises",
+hi:"प्रधानमंत्री सूक्ष्म खाद्य प्रसंस्करण योजना",
+te:"సూక్ష్మ ఆహార ప్రాసెసింగ్ పథకం"
+},
+description:{
+en:"Supports small food processing businesses by farmers.",
+hi:"किसानों के छोटे खाद्य प्रसंस्करण उद्योगों को सहायता।",
+te:"రైతుల చిన్న ఆహార ప్రాసెసింగ్ వ్యాపారాలకు సహాయం."
+},
+eligibility:{
+en:"Small food processing entrepreneurs.",
+hi:"छोटे खाद्य प्रसंस्करण व्यवसायी।",
+te:"చిన్న ఆహార ప్రాసెసింగ్ వ్యాపారులు."
+},
+benefits:{
+en:"Financial assistance up to 35% subsidy.",
+hi:"35% तक वित्तीय सहायता।",
+te:"35% వరకు ఆర్థిక సహాయం."
+},
+howToApply:{
+en:"1.Visit mofpi.gov.in\n2.Register business\n3.Apply subsidy",
+hi:"1.mofpi.gov.in जाएं\n2.पंजीकरण करें\n3.सब्सिडी आवेदन करें",
+te:"1.mofpi.gov.in కు వెళ్లండి\n2.నమోదు చేయండి\n3.సబ్సిడీ కోసం దరఖాస్తు చేయండి"
+},
+link:"https://mofpi.gov.in"
+}
 ];
 
-const GovernmentSchemes: React.FC = () => {
-  const { t, language } = useLanguage();
-  const { darkMode, setCurrentPage } = useApp();
-  const [expandedId, setExpandedId] = useState<string | null>(null);
+const GovernmentSchemes:React.FC=()=>{
+const {t,language}=useLanguage();
+const {darkMode,setCurrentPage}=useApp();
+const [expandedId,setExpandedId]=useState<string|null>(null);
 
-  const openSchemeLink = (link: string) => {
-    window.open(link, '_blank');
-  };
+const openSchemeLink=(link:string)=>{
+window.open(link,"_blank");
+};
 
-  return (
-    <div className={`min-h-screen ${darkMode ? 'bg-gray-900' : 'bg-gray-50'}`}>
-      <div className="max-w-4xl mx-auto px-4 py-6">
-        <div className="flex items-center gap-3 mb-6">
-          <button onClick={() => setCurrentPage('dashboard')} className={`p-2 rounded-xl ${darkMode ? 'hover:bg-gray-800' : 'hover:bg-gray-100'}`}>
-            <svg className={`w-6 h-6 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
-          </button>
-          <h1 className={`text-2xl font-bold ${darkMode ? 'text-white' : 'text-gray-900'}`}>{t('scheme.title')}</h1>
-        </div>
+return(
+<div className={`min-h-screen ${darkMode?"bg-gray-900":"bg-gray-50"}`}>
+<div className="max-w-4xl mx-auto px-4 py-6">
 
-        <div className="space-y-4">
-          {schemes.map(scheme => (
-            <div key={scheme.id} className={`${darkMode ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-100'} border rounded-2xl overflow-hidden transition-all`}>
-              <button onClick={() => setExpandedId(expandedId === scheme.id ? null : scheme.id)}
-                className="w-full p-5 flex items-center gap-4 text-left">
-                <div className={`w-14 h-14 bg-gradient-to-br ${scheme.color} rounded-2xl flex items-center justify-center flex-shrink-0`}>
-                  <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={scheme.icon} /></svg>
-                </div>
-                <div className="flex-1 min-w-0">
-                  <h3 className={`font-bold text-lg ${darkMode ? 'text-white' : 'text-gray-900'}`}>{scheme.name[language] || scheme.name.en}</h3>
-                  <p className={`text-sm ${darkMode ? 'text-gray-400' : 'text-gray-500'} line-clamp-2`}>{scheme.description[language] || scheme.description.en}</p>
-                </div>
-                <svg className={`w-5 h-5 flex-shrink-0 transition-transform ${expandedId === scheme.id ? 'rotate-180' : ''} ${darkMode ? 'text-gray-400' : 'text-gray-500'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
-              </button>
+<div className="flex items-center gap-3 mb-6">
+<button onClick={()=>setCurrentPage("dashboard")} className="p-2 rounded-xl hover:bg-gray-200">
+←
+</button>
+<h1 className={`text-2xl font-bold ${darkMode?"text-white":"text-gray-900"}`}>
+{t("scheme.title")}
+</h1>
+</div>
 
-              {expandedId === scheme.id && (
-                <div className={`px-5 pb-5 space-y-4 border-t ${darkMode ? 'border-gray-700' : 'border-gray-100'}`}>
-                  <div className="pt-4">
-                    <h4 className={`font-bold text-sm ${darkMode ? 'text-green-400' : 'text-green-700'} mb-1 flex items-center gap-1`}>
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
-                      {t('scheme.eligibility')}
-                    </h4>
-                    <p className={`text-sm ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>{scheme.eligibility[language] || scheme.eligibility.en}</p>
-                  </div>
-                  <div>
-                    <h4 className={`font-bold text-sm ${darkMode ? 'text-blue-400' : 'text-blue-700'} mb-1 flex items-center gap-1`}>
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                      {t('scheme.benefits')}
-                    </h4>
-                    <p className={`text-sm ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>{scheme.benefits[language] || scheme.benefits.en}</p>
-                  </div>
-                  <div>
-                    <h4 className={`font-bold text-sm ${darkMode ? 'text-amber-400' : 'text-amber-700'} mb-1 flex items-center gap-1`}>
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" /></svg>
-                      {t('scheme.howToApply')}
-                    </h4>
-                    <p className={`text-sm ${darkMode ? 'text-gray-300' : 'text-gray-700'} whitespace-pre-line`}>{scheme.howToApply[language] || scheme.howToApply.en}</p>
-                  </div>
-                  
-                  {/* Apply Now Button */}
-                  <button
-                    onClick={() => openSchemeLink(scheme.link)}
-                    className="w-full mt-4 py-3 bg-gradient-to-r from-green-600 to-green-700 text-white font-bold rounded-xl hover:from-green-700 hover:to-green-800 transition flex items-center justify-center gap-2"
-                  >
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                    </svg>
-                    Apply Now / Official Website
-                  </button>
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
+<div className="space-y-4">
+{schemes.map((scheme)=>(
+<div key={scheme.id} className={`${darkMode?"bg-gray-800":"bg-white"} border rounded-2xl`}>
+
+<button
+onClick={()=>setExpandedId(expandedId===scheme.id?null:scheme.id)}
+className="w-full p-5 flex items-center gap-4 text-left"
+>
+
+<div className={`w-14 h-14 bg-gradient-to-br ${scheme.color} rounded-2xl flex items-center justify-center`}>
+🌾
+</div>
+
+<div className="flex-1">
+<h3 className={`font-bold text-lg ${darkMode?"text-white":"text-gray-900"}`}>
+{scheme.name[language] || scheme.name.en}
+</h3>
+
+<p className={`${darkMode?"text-gray-400":"text-gray-500"} text-sm`}>
+{scheme.description[language] || scheme.description.en}
+</p>
+</div>
+
+</button>
+
+{expandedId===scheme.id &&(
+<div className="px-5 pb-5 space-y-3">
+
+<p><b>{t("scheme.eligibility")}:</b> {scheme.eligibility[language] || scheme.eligibility.en}</p>
+
+<p><b>{t("scheme.benefits")}:</b> {scheme.benefits[language] || scheme.benefits.en}</p>
+
+<p><b>{t("scheme.howToApply")}:</b></p>
+
+<p className="whitespace-pre-line">
+{scheme.howToApply[language] || scheme.howToApply.en}
+</p>
+
+<button
+onClick={()=>openSchemeLink(scheme.link)}
+className="mt-3 bg-green-600 text-white px-4 py-2 rounded-xl"
+>
+Apply Now
+</button>
+
+</div>
+)}
+
+</div>
+))}
+</div>
+
+</div>
+</div>
+);
 };
 
 export default GovernmentSchemes;
