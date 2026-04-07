@@ -288,7 +288,7 @@ if (!lat && body.city) {
 
 // Now fetch weather using coordinates
 const weatherResponse = await fetch(
-  `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`
+  `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric&lang=${language}`
 );
 
 const result = await weatherResponse.json();

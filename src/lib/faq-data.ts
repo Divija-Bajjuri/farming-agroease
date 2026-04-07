@@ -23,7 +23,7 @@ english_question: "How to check weather in KrishiMitra?",
 english_answer: "Open the Dashboard and click the Weather section. Allow location access to see temperature, rainfall and humidity.",
 
 telugu_question: "కృషిమిత్రలో వాతావరణం ఎలా చూడాలి?",
-telugu_answer: "డాష్‌బోర్డ్‌కి వెళ్లి Weather పై క్లిక్ చేయండి. Location అనుమతిస్తే ఉష్ణోగ్రత, వర్షపాతం వివరాలు కనిపిస్తాయి.",
+telugu_answer: "డాష్‌బోర్డ్‌కి వెళ్లి వాతావరణం పై క్లిక్ చేయండి. స్థానం అనుమతిస్తే ఉష్ణోగ్రత, వర్షపాతం వివరాలు కనిపిస్తాయి.",
 
 hindi_question: "कृषिमित्र में मौसम कैसे देखें?",
 hindi_answer: "डैशबोर्ड खोलें और मौसम पर क्लिक करें। लोकेशन अनुमति दें।"
@@ -35,10 +35,10 @@ english_question: "How to rent farm machinery?",
 english_answer: "Go to Dashboard → Machinery → Select a machine → Click Book Now to contact the owner.",
 
 telugu_question: "వ్యవసాయ యంత్రాలను ఎలా అద్దెకు తీసుకోవాలి?",
-telugu_answer: "డాష్‌బోర్డ్ → Machinery → యంత్రాన్ని ఎంచుకుని Book Now పై క్లిక్ చేయండి.",
+telugu_answer: "డాష్‌బోర్డ్ → యంత్రాల → యంత్రాన్ని ఎంచుకుని బుక్ చేయండి పై క్లిక్ చేయండి.",
 
 hindi_question: "कृषि मशीन किराए पर कैसे लें?",
-hindi_answer: "डैशबोर्ड → मशीनरी → मशीन चुनें → Book Now क्लिक करें।"
+hindi_answer: "डैशबोर्ड → मशीनरी → मशीन चुनें → बुक करें क्लिक करें।"
 },
 
 {
@@ -47,7 +47,7 @@ english_question: "How to get fertilizer recommendation?",
 english_answer: "Open Fertilizer Advice → Select crop type → Select soil type → Enter farm size → Click Get Recommendation.",
 
 telugu_question: "ఎరువుల సిఫార్సు ఎలా పొందాలి?",
-telugu_answer: "Fertilizer Advice లో పంట రకం, నేల రకం మరియు పొలం పరిమాణం నమోదు చేసి Get Recommendation క్లిక్ చేయండి.",
+telugu_answer: "ఎరువుల సిఫార్సు లో పంట రకం, నేల రకం మరియు పొలం పరిమాణం నమోదు చేసి Get Recommendation క్లిక్ చేయండి.",
 
 hindi_question: "उर्वरक सलाह कैसे प्राप्त करें?",
 hindi_answer: "फसल और मिट्टी का प्रकार चुनें, खेत का आकार दर्ज करें और Get Recommendation क्लिक करें।"
@@ -59,7 +59,7 @@ english_question: "How to see government schemes?",
 english_answer: "Open Government Schemes page to see details about farmer support schemes like PM-KISAN and crop insurance.",
 
 telugu_question: "ప్రభుత్వ పథకాలు ఎలా చూడాలి?",
-telugu_answer: "Govt Schemes పేజీని తెరిచి రైతుల కోసం ఉన్న పథకాల వివరాలు చూడండి.",
+telugu_answer: "ప్రభుత్వ పథకాలు పేజీని తెరిచి రైతుల కోసం ఉన్న పథకాల వివరాలు చూడండి.",
 
 hindi_question: "सरकारी योजनाएं कैसे देखें?",
 hindi_answer: "सरकारी योजनाएं सेक्शन खोलें और किसानों के लिए उपलब्ध योजनाएं देखें।"

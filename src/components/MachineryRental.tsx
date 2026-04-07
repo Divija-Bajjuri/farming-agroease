@@ -50,9 +50,72 @@ interface Booking {
   bookingType: 'hourly' | 'daily';
   status: 'pending' | 'approved' | 'completed';
 }
-
-const MACHINE_TYPES = ['Tractor', 'Harvester', 'Rotavator', 'Seed Drill', 'Sprayer', 'Thresher', 'Plough', 'Cultivator'];
-
+const MACHINE_TYPES = [
+{
+value:'Tractor',
+label:{
+en:'Tractor',
+hi:'ट्रैक्टर',
+te:'ట్రాక్టర్'
+}
+},
+{
+value:'Harvester',
+label:{
+en:'Harvester',
+hi:'हार्वेस्टर',
+te:'హార్వెస్టర్'
+}
+},
+{
+value:'Rotavator',
+label:{
+en:'Rotavator',
+hi:'रोटावेटर',
+te:'రోటావేటర్'
+}
+},
+{
+value:'Seed Drill',
+label:{
+en:'Seed Drill',
+hi:'सीड ड्रिल',
+te:'సీడ్ డ్రిల్'
+}
+},
+{
+value:'Sprayer',
+label:{
+en:'Sprayer',
+hi:'स्प्रेयर',
+te:'స్ప్రేయర్'
+}
+},
+{
+value:'Thresher',
+label:{
+en:'Thresher',
+hi:'थ्रेशर',
+te:'త్రెషర్'
+}
+},
+{
+value:'Plough',
+label:{
+en:'Plough',
+hi:'हल',
+te:'నాగలి'
+}
+},
+{
+value:'Cultivator',
+label:{
+en:'Cultivator',
+hi:'कल्टीवेटर',
+te:'కల్టివేటర్'
+}
+}
+];
 const MACHINE_IMAGES: Record<string, string> = {
   'Tractor': 'https://images.pexels.com/photos/2933243/pexels-photo-2933243.jpeg?cs=srgb&dl=pexels-jk04-2933243.jpg&fm=jpg',
   'Harvester': 'https://www.deere.com.au/assets/images/region-4/products/harvesting/tseries-combine-r2C001197-1920x1080.jpg',
@@ -237,7 +300,11 @@ const filtered = machines.filter(m => {
                 className={`px-4 py-3 border-2 rounded-xl ${darkMode ? 'bg-gray-700 border-gray-600 text-white' : 'border-gray-200'} focus:border-green-500`} />
               <select value={addForm.type} onChange={e => setAddForm({ ...addForm, type: e.target.value })}
                 className={`px-4 py-3 border-2 rounded-xl ${darkMode ? 'bg-gray-700 border-gray-600 text-white' : 'border-gray-200'} focus:border-green-500`}>
-                {MACHINE_TYPES.map(type => <option key={type} value={type}>{type}</option>)}
+                {MACHINE_TYPES.map(type => (
+                      <option key={type.value} value={type.value}>
+                        {type.label[language] || type.label.en}
+                      </option>
+                    ))}
               </select>
               <input type="number" placeholder={`${t('mach.price')} ${t('mach.perHour')}`} value={addForm.pricePerHour} onChange={e => setAddForm({ ...addForm, pricePerHour: e.target.value })}
                 className={`px-4 py-3 border-2 rounded-xl ${darkMode ? 'bg-gray-700 border-gray-600 text-white' : 'border-gray-200'} focus:border-green-500`} />
@@ -310,8 +377,14 @@ const filtered = machines.filter(m => {
           <div className="flex flex-col sm:flex-row gap-3">
             <select value={searchType} onChange={e => setSearchType(e.target.value)}
               className={`flex-1 px-4 py-3 border-2 rounded-xl ${darkMode ? 'bg-gray-700 border-gray-600 text-white' : 'border-gray-200'} focus:border-green-500`}>
-              <option value="">{language === 'hi' ? 'सभी प्रकार' : language === 'te' ? 'All Types' : 'All Types'}</option>
-              {MACHINE_TYPES.map(type => <option key={type} value={type}>{type}</option>)}
+              <option value="">
+              {language === 'hi' ? 'सभी प्रकार' : language === 'te' ? 'అన్ని రకాల' : 'All Types'}
+            </option>
+              {MACHINE_TYPES.map(type => (
+                      <option key={type.value} value={type.value}>
+                        {type.label[language] || type.label.en}
+                      </option>
+                    ))}
             </select>
             <input type="text" value={searchLocation} onChange={e => setSearchLocation(e.target.value)}
               placeholder={language === 'hi' ? 'स्थान खोजें...' : language === 'te' ? 'Search location...' : 'Search location...'}

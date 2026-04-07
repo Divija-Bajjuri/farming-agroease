@@ -14,6 +14,31 @@ interface Scheme {
   link: string;
 }
 
+/* ---------------- LABEL TRANSLATIONS ---------------- */
+
+const labels = {
+  en: {
+    eligibility: "Eligibility",
+    benefits: "Benefits",
+    howToApply: "How to Apply",
+    applyNow: "Apply Now"
+  },
+  hi: {
+    eligibility: "पात्रता",
+    benefits: "लाभ",
+    howToApply: "आवेदन कैसे करें",
+    applyNow: "अभी आवेदन करें"
+  },
+  te: {
+    eligibility: "అర్హత",
+    benefits: "ప్రయోజనాలు",
+    howToApply: "దరఖాస్తు విధానం",
+    applyNow: "ఇప్పుడే దరఖాస్తు చేయండి"
+  }
+};
+
+/* ---------------- SCHEMES DATA (same as your file) ---------------- */
+
 const schemes: Scheme[] = [
 {
 id:"1",
@@ -495,83 +520,123 @@ link:"https://mofpi.gov.in"
 }
 ];
 
-const GovernmentSchemes:React.FC=()=>{
-const {t,language}=useLanguage();
-const {darkMode,setCurrentPage}=useApp();
-const [expandedId,setExpandedId]=useState<string|null>(null);
 
-const openSchemeLink=(link:string)=>{
-window.open(link,"_blank");
-};
+/* ---------------- COMPONENT ---------------- */
 
-return(
-<div className={`min-h-screen ${darkMode?"bg-gray-900":"bg-gray-50"}`}>
-<div className="max-w-4xl mx-auto px-4 py-6">
+const GovernmentSchemes: React.FC = () => {
 
-<div className="flex items-center gap-3 mb-6">
-<button onClick={()=>setCurrentPage("dashboard")} className="p-2 rounded-xl hover:bg-gray-200">
-←
-</button>
-<h1 className={`text-2xl font-bold ${darkMode?"text-white":"text-gray-900"}`}>
-{t("scheme.title")}
-</h1>
-</div>
+  const { language } = useLanguage();
+  const { darkMode, setCurrentPage } = useApp();
 
-<div className="space-y-4">
-{schemes.map((scheme)=>(
-<div key={scheme.id} className={`${darkMode?"bg-gray-800":"bg-white"} border rounded-2xl`}>
+  const [expandedId, setExpandedId] = useState<string | null>(null);
 
-<button
-onClick={()=>setExpandedId(expandedId===scheme.id?null:scheme.id)}
-className="w-full p-5 flex items-center gap-4 text-left"
->
+  const openSchemeLink = (link: string) => {
+    window.open(link, "_blank");
+  };
 
-<div className={`w-14 h-14 bg-gradient-to-br ${scheme.color} rounded-2xl flex items-center justify-center`}>
-🌾
-</div>
+  const lang = language || "en";
 
-<div className="flex-1">
-<h3 className={`font-bold text-lg ${darkMode?"text-white":"text-gray-900"}`}>
-{scheme.name[language] || scheme.name.en}
-</h3>
+  return (
+    <div className={`min-h-screen ${darkMode ? "bg-gray-900" : "bg-gray-50"}`}>
 
-<p className={`${darkMode?"text-gray-400":"text-gray-500"} text-sm`}>
-{scheme.description[language] || scheme.description.en}
-</p>
-</div>
+      <div className="max-w-4xl mx-auto px-4 py-6">
 
-</button>
+        {/* Header */}
 
-{expandedId===scheme.id &&(
-<div className="px-5 pb-5 space-y-3">
+        <div className="flex items-center gap-3 mb-6">
+          <button
+            onClick={() => setCurrentPage("dashboard")}
+            className="p-2 rounded-xl hover:bg-gray-200"
+          >
+            ←
+          </button>
 
-<p><b>{t("scheme.eligibility")}:</b> {scheme.eligibility[language] || scheme.eligibility.en}</p>
+          <h1 className={`text-2xl font-bold ${darkMode ? "text-white" : "text-gray-900"}`}>
+            Government Schemes
+          </h1>
+        </div>
 
-<p><b>{t("scheme.benefits")}:</b> {scheme.benefits[language] || scheme.benefits.en}</p>
+        {/* Schemes */}
 
-<p><b>{t("scheme.howToApply")}:</b></p>
+        <div className="space-y-4">
 
-<p className="whitespace-pre-line">
-{scheme.howToApply[language] || scheme.howToApply.en}
-</p>
+          {schemes.map((scheme) => (
 
-<button
-onClick={()=>openSchemeLink(scheme.link)}
-className="mt-3 bg-green-600 text-white px-4 py-2 rounded-xl"
->
-Apply Now
-</button>
+            <div
+              key={scheme.id}
+              className={`${darkMode ? "bg-gray-800" : "bg-white"} border rounded-2xl`}
+            >
 
-</div>
-)}
+              {/* Card Header */}
 
-</div>
-))}
-</div>
+              <button
+                onClick={() => setExpandedId(expandedId === scheme.id ? null : scheme.id)}
+                className="w-full p-5 flex items-center gap-4 text-left"
+              >
 
-</div>
-</div>
-);
+                <div className={`w-14 h-14 bg-gradient-to-br ${scheme.color} rounded-2xl flex items-center justify-center`}>
+                  🌾
+                </div>
+
+                <div className="flex-1">
+
+                  <h3 className={`font-bold text-lg ${darkMode ? "text-white" : "text-gray-900"}`}>
+                    {scheme.name[lang] || scheme.name.en}
+                  </h3>
+
+                  <p className={`${darkMode ? "text-gray-400" : "text-gray-500"} text-sm`}>
+                    {scheme.description[lang] || scheme.description.en}
+                  </p>
+
+                </div>
+
+              </button>
+
+              {/* Expanded Section */}
+
+              {expandedId === scheme.id && (
+
+                <div className="px-5 pb-5 space-y-3">
+
+                  <p>
+                    <b>{labels[lang].eligibility}:</b>{" "}
+                    {scheme.eligibility[lang] || scheme.eligibility.en}
+                  </p>
+
+                  <p>
+                    <b>{labels[lang].benefits}:</b>{" "}
+                    {scheme.benefits[lang] || scheme.benefits.en}
+                  </p>
+
+                  <p>
+                    <b>{labels[lang].howToApply}:</b>
+                  </p>
+
+                  <p className="whitespace-pre-line">
+                    {scheme.howToApply[lang] || scheme.howToApply.en}
+                  </p>
+
+                  <button
+                    onClick={() => openSchemeLink(scheme.link)}
+                    className="mt-3 bg-green-600 text-white px-4 py-2 rounded-xl"
+                  >
+                    {labels[lang].applyNow}
+                  </button>
+
+                </div>
+
+              )}
+
+            </div>
+
+          ))}
+
+        </div>
+
+      </div>
+
+    </div>
+  );
 };
 
 export default GovernmentSchemes;
