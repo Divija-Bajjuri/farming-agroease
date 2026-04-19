@@ -1,0 +1,298 @@
+crop_type,soil_type,farm_size,season,previous_crop,nitrogen,phosphorus,potassium,fertilizer_type,fertilizer_name
+Rice,Alluvial,1,Kharif,Wheat,120,60,40,Chemical,Urea
+Rice,Alluvial,2,Kharif,Wheat,240,120,80,Chemical,Urea
+Rice,Alluvial,3,Kharif,Wheat,360,180,120,Chemical,Urea
+Rice,Alluvial,0.5,Kharif,Wheat,60,30,20,Chemical,Urea
+Rice,Alluvial,1.5,Kharif,Wheat,180,90,60,Chemical,Urea
+Rice,Alluvial,2.5,Kharif,Wheat,300,150,100,Chemical,Urea
+Rice,Black (Regur),1,Kharif,Wheat,130,65,45,Chemical,DAP
+Rice,Black (Regur),2,Kharif,Wheat,260,130,90,Chemical,DAP
+Rice,Black (Regur),3,Kharif,Wheat,390,195,135,Chemical,DAP
+Rice,Black (Regur),0.5,Kharif,Wheat,65,32,22,Chemical,DAP
+Rice,Black (Regur),1.5,Kharif,Wheat,195,97,67,Chemical,DAP
+Rice,Black (Regur),2.5,Kharif,Wheat,325,162,112,Chemical,DAP
+Rice,Red,1,Kharif,Wheat,115,55,38,Natural,Vermicompost
+Rice,Red,2,Kharif,Wheat,230,110,76,Natural,Vermicompost
+Rice,Red,3,Kharif,Wheat,345,165,114,Natural,Vermicompost
+Rice,Red,0.5,Kharif,Wheat,57,27,19,Natural,Vermicompost
+Rice,Red,1.5,Kharif,Wheat,172,82,57,Natural,Vermicompost
+Rice,Red,2.5,Kharif,Wheat,287,137,95,Natural,Vermicompost
+Rice,Laterite,1,Kharif,Wheat,125,60,42,Chemical,NPK
+Rice,Laterite,2,Kharif,Wheat,250,120,84,Chemical,NPK
+Rice,Laterite,3,Kharif,Wheat,375,180,126,Chemical,NPK
+Rice,Laterite,0.5,Kharif,Wheat,62,30,21,Chemical,NPK
+Rice,Laterite,1.5,Kharif,Wheat,187,90,63,Chemical,NPK
+Rice,Sandy,1,Kharif,Wheat,135,70,45,Chemical,Urea
+Rice,Sandy,2,Kharif,Wheat,270,140,90,Chemical,Urea
+Rice,Sandy,3,Kharif,Wheat,405,210,135,Chemical,Urea
+Rice,Sandy,0.5,Kharif,Wheat,67,35,22,Chemical,Urea
+Rice,Sandy,1.5,Kharif,Wheat,202,105,67,Chemical,Urea
+Rice,Clay,1,Kharif,Wheat,140,65,48,Natural,Compost
+Rice,Clay,2,Kharif,Wheat,280,130,96,Natural,Compost
+Rice,Clay,3,Kharif,Wheat,420,195,144,Natural,Compost
+Rice,Clay,0.5,Kharif,Wheat,70,32,24,Natural,Compost
+Rice,Clay,1.5,Kharif,Wheat,210,97,72,Natural,Compost
+Wheat,Alluvial,1,Rabi,Rice,150,60,40,Chemical,Urea
+Wheat,Alluvial,2,Rabi,Rice,300,120,80,Chemical,Urea
+Wheat,Alluvial,3,Rabi,Rice,450,180,120,Chemical,Urea
+Wheat,Alluvial,0.5,Rabi,Rice,75,30,20,Chemical,Urea
+Wheat,Alluvial,1.5,Rabi,Rice,225,90,60,Chemical,Urea
+Wheat,Alluvial,2.5,Rabi,Rice,375,150,100,Chemical,Urea
+Wheat,Black (Regur),1,Rabi,Rice,160,65,45,Chemical,DAP
+Wheat,Black (Regur),2,Rabi,Rice,320,130,90,Chemical,DAP
+Wheat,Black (Regur),3,Rabi,Rice,480,195,135,Chemical,DAP
+Wheat,Black (Regur),0.5,Rabi,Rice,80,32,22,Chemical,DAP
+Wheat,Black (Regur),1.5,Rabi,Rice,240,97,67,Chemical,DAP
+Wheat,Red,1,Rabi,Rice,145,55,38,Natural,Vermicompost
+Wheat,Red,2,Rabi,Rice,290,110,76,Natural,Vermicompost
+Wheat,Red,3,Rabi,Rice,435,165,114,Natural,Vermicompost
+Wheat,Red,0.5,Rabi,Rice,72,27,19,Natural,Vermicompost
+Wheat,Red,1.5,Rabi,Rice,217,82,57,Natural,Vermicompost
+Wheat,Sandy,1,Rabi,Rice,155,70,42,Natural,Compost
+Wheat,Sandy,2,Rabi,Rice,310,140,84,Natural,Compost
+Wheat,Sandy,3,Rabi,Rice,465,210,126,Natural,Compost
+Wheat,Sandy,0.5,Rabi,Rice,77,35,21,Natural,Compost
+Wheat,Sandy,1.5,Rabi,Rice,232,105,63,Natural,Compost
+Wheat,Clay,1,Rabi,Rice,165,60,45,Chemical,NPK
+Wheat,Clay,2,Rabi,Rice,330,120,90,Chemical,NPK
+Wheat,Clay,3,Rabi,Rice,495,180,135,Chemical,NPK
+Wheat,Clay,0.5,Rabi,Rice,82,30,22,Chemical,NPK
+Wheat,Clay,1.5,Rabi,Rice,247,90,67,Chemical,NPK
+Cotton,Alluvial,1,Kharif,Wheat,120,60,60,Chemical,Urea
+Cotton,Alluvial,2,Kharif,Wheat,240,120,120,Chemical,Urea
+Cotton,Alluvial,3,Kharif,Wheat,360,180,180,Chemical,Urea
+Cotton,Alluvial,0.5,Kharif,Wheat,60,30,30,Chemical,Urea
+Cotton,Alluvial,1.5,Kharif,Wheat,180,90,90,Chemical,Urea
+Cotton,Alluvial,2.5,Kharif,Wheat,300,150,150,Chemical,Urea
+Cotton,Black (Regur),1,Kharif,Wheat,130,65,65,Chemical,DAP
+Cotton,Black (Regur),2,Kharif,Wheat,260,130,130,Chemical,DAP
+Cotton,Black (Regur),3,Kharif,Wheat,390,195,195,Chemical,DAP
+Cotton,Black (Regur),0.5,Kharif,Wheat,65,32,32,Chemical,DAP
+Cotton,Black (Regur),1.5,Kharif,Wheat,195,97,97,Chemical,DAP
+Cotton,Red,1,Kharif,Wheat,115,55,55,Natural,Vermicompost
+Cotton,Red,2,Kharif,Wheat,230,110,110,Natural,Vermicompost
+Cotton,Red,3,Kharif,Wheat,345,165,165,Natural,Vermicompost
+Cotton,Red,0.5,Kharif,Wheat,57,27,27,Natural,Vermicompost
+Cotton,Red,1.5,Kharif,Wheat,172,82,82,Natural,Vermicompost
+Cotton,Sandy,1,Kharif,Wheat,125,60,60,Chemical,NPK
+Cotton,Sandy,2,Kharif,Wheat,250,120,120,Chemical,NPK
+Cotton,Sandy,3,Kharif,Wheat,375,180,180,Chemical,NPK
+Cotton,Sandy,0.5,Kharif,Wheat,62,30,30,Chemical,NPK
+Cotton,Sandy,1.5,Kharif,Wheat,187,90,90,Chemical,NPK
+Cotton,Laterite,1,Kharif,Wheat,135,70,70,Natural,Compost
+Cotton,Laterite,2,Kharif,Wheat,270,140,140,Natural,Compost
+Cotton,Laterite,3,Kharif,Wheat,405,210,210,Natural,Compost
+Cotton,Laterite,0.5,Kharif,Wheat,67,35,35,Natural,Compost
+Cotton,Laterite,1.5,Kharif,Wheat,202,105,105,Natural,Compost
+Cotton,Clay,1,Kharif,Wheat,140,75,75,Chemical,DAP
+Cotton,Clay,2,Kharif,Wheat,280,150,150,Chemical,DAP
+Cotton,Clay,3,Kharif,Wheat,420,225,225,Chemical,DAP
+Cotton,Clay,0.5,Kharif,Wheat,70,37,37,Chemical,DAP
+Cotton,Clay,1.5,Kharif,Wheat,210,112,112,Chemical,DAP
+Maize,Alluvial,1,Kharif,Wheat,150,75,40,Chemical,Urea
+Maize,Alluvial,2,Kharif,Wheat,300,150,80,Chemical,Urea
+Maize,Alluvial,3,Kharif,Wheat,450,225,120,Chemical,Urea
+Maize,Alluvial,0.5,Kharif,Wheat,75,37,20,Chemical,Urea
+Maize,Alluvial,1.5,Kharif,Wheat,225,112,60,Chemical,Urea
+Maize,Alluvial,2.5,Kharif,Wheat,375,187,100,Chemical,Urea
+Maize,Black (Regur),1,Kharif,Wheat,160,80,45,Chemical,DAP
+Maize,Black (Regur),2,Kharif,Wheat,320,160,90,Chemical,DAP
+Maize,Black (Regur),3,Kharif,Wheat,480,240,135,Chemical,DAP
+Maize,Black (Regur),0.5,Kharif,Wheat,80,40,22,Chemical,DAP
+Maize,Black (Regur),1.5,Kharif,Wheat,240,120,67,Chemical,DAP
+Maize,Red,1,Kharif,Wheat,145,70,38,Natural,Vermicompost
+Maize,Red,2,Kharif,Wheat,290,140,76,Natural,Vermicompost
+Maize,Red,3,Kharif,Wheat,435,210,114,Natural,Vermicompost
+Maize,Red,0.5,Kharif,Wheat,72,35,19,Natural,Vermicompost
+Maize,Red,1.5,Kharif,Wheat,217,105,57,Natural,Vermicompost
+Maize,Sandy,1,Kharif,Wheat,155,75,42,Natural,Compost
+Maize,Sandy,2,Kharif,Wheat,310,150,84,Natural,Compost
+Maize,Sandy,3,Kharif,Wheat,465,225,126,Natural,Compost
+Maize,Sandy,0.5,Kharif,Wheat,77,37,21,Natural,Compost
+Maize,Sandy,1.5,Kharif,Wheat,232,112,63,Natural,Compost
+Maize,Clay,1,Kharif,Wheat,165,80,48,Chemical,NPK
+Maize,Clay,2,Kharif,Wheat,330,160,96,Chemical,NPK
+Maize,Clay,3,Kharif,Wheat,495,240,144,Chemical,NPK
+Maize,Clay,0.5,Kharif,Wheat,82,40,24,Chemical,NPK
+Maize,Clay,1.5,Kharif,Wheat,247,120,72,Chemical,NPK
+Maize,Laterite,1,Kharif,Wheat,170,85,50,Natural,Vermicompost
+Maize,Laterite,2,Kharif,Wheat,340,170,100,Natural,Vermicompost
+Maize,Laterite,3,Kharif,Wheat,510,255,150,Natural,Vermicompost
+Tomato,Alluvial,1,Rabi,Rice,120,80,60,Chemical,Urea
+Tomato,Alluvial,2,Rabi,Rice,240,160,120,Chemical,Urea
+Tomato,Alluvial,0.5,Rabi,Rice,60,40,30,Chemical,Urea
+Tomato,Alluvial,1.5,Rabi,Rice,180,120,90,Chemical,Urea
+Tomato,Alluvial,2.5,Rabi,Rice,300,200,150,Chemical,Urea
+Tomato,Black (Regur),1,Rabi,Rice,130,85,65,Chemical,DAP
+Tomato,Black (Regur),2,Rabi,Rice,260,170,130,Chemical,DAP
+Tomato,Black (Regur),0.5,Rabi,Rice,65,42,32,Chemical,DAP
+Tomato,Black (Regur),1.5,Rabi,Rice,195,127,97,Chemical,DAP
+Tomato,Red,1,Rabi,Rice,115,75,55,Natural,Vermicompost
+Tomato,Red,2,Rabi,Rice,230,150,110,Natural,Vermicompost
+Tomato,Red,0.5,Rabi,Rice,57,37,27,Natural,Vermicompost
+Tomato,Red,1.5,Rabi,Rice,172,112,82,Natural,Vermicompost
+Tomato,Sandy,1,Rabi,Rice,125,80,58,Chemical,NPK
+Tomato,Sandy,2,Rabi,Rice,250,160,116,Chemical,NPK
+Tomato,Sandy,0.5,Rabi,Rice,62,40,29,Chemical,NPK
+Tomato,Sandy,1.5,Rabi,Rice,187,120,87,Chemical,NPK
+Tomato,Clay,1,Rabi,Rice,135,85,62,Natural,Compost
+Tomato,Clay,2,Rabi,Rice,270,170,124,Natural,Compost
+Tomato,Clay,0.5,Rabi,Rice,67,42,31,Natural,Compost
+Tomato,Clay,1.5,Rabi,Rice,202,127,93,Natural,Compost
+Tomato,Laterite,1,Rabi,Rice,140,90,65,Natural,Vermicompost
+Tomato,Laterite,2,Rabi,Rice,280,180,130,Natural,Vermicompost
+Tomato,Laterite,0.5,Rabi,Rice,70,45,32,Natural,Vermicompost
+Sugarcane,Alluvial,1,Kharif,Wheat,180,90,80,Chemical,Urea
+Sugarcane,Alluvial,2,Kharif,Wheat,360,180,160,Chemical,Urea
+Sugarcane,Alluvial,3,Kharif,Wheat,540,270,240,Chemical,Urea
+Sugarcane,Alluvial,0.5,Kharif,Wheat,90,45,40,Chemical,Urea
+Sugarcane,Alluvial,1.5,Kharif,Wheat,270,135,120,Chemical,Urea
+Sugarcane,Alluvial,2.5,Kharif,Wheat,450,225,200,Chemical,Urea
+Sugarcane,Black (Regur),1,Kharif,Wheat,190,95,85,Chemical,DAP
+Sugarcane,Black (Regur),2,Kharif,Wheat,380,190,170,Chemical,DAP
+Sugarcane,Black (Regur),3,Kharif,Wheat,570,285,255,Chemical,DAP
+Sugarcane,Black (Regur),0.5,Kharif,Wheat,95,47,42,Chemical,DAP
+Sugarcane,Black (Regur),1.5,Kharif,Wheat,285,142,127,Chemical,DAP
+Sugarcane,Red,1,Kharif,Wheat,175,85,75,Natural,Vermicompost
+Sugarcane,Red,2,Kharif,Wheat,350,170,150,Natural,Vermicompost
+Sugarcane,Red,3,Kharif,Wheat,525,255,225,Natural,Vermicompost
+Sugarcane,Red,0.5,Kharif,Wheat,87,42,37,Natural,Vermicompost
+Sugarcane,Red,1.5,Kharif,Wheat,262,127,112,Natural,Vermicompost
+Sugarcane,Sandy,1,Kharif,Wheat,185,90,78,Chemical,NPK
+Sugarcane,Sandy,2,Kharif,Wheat,370,180,156,Chemical,NPK
+Sugarcane,Sandy,3,Kharif,Wheat,555,270,234,Chemical,NPK
+Sugarcane,Sandy,0.5,Kharif,Wheat,92,45,39,Chemical,NPK
+Sugarcane,Sandy,1.5,Kharif,Wheat,277,135,117,Chemical,NPK
+Sugarcane,Laterite,1,Kharif,Wheat,195,100,82,Natural,Compost
+Sugarcane,Laterite,2,Kharif,Wheat,390,200,164,Natural,Compost
+Sugarcane,Laterite,3,Kharif,Wheat,585,300,246,Natural,Compost
+Sugarcane,Laterite,0.5,Kharif,Wheat,97,50,41,Natural,Compost
+Sugarcane,Laterite,1.5,Kharif,Wheat,292,150,123,Natural,Compost
+Sugarcane,Clay,1,Kharif,Wheat,200,95,85,Chemical,DAP
+Sugarcane,Clay,2,Kharif,Wheat,400,190,170,Chemical,DAP
+Sugarcane,Clay,3,Kharif,Wheat,600,285,255,Chemical,DAP
+Sugarcane,Clay,0.5,Kharif,Wheat,100,47,42,Chemical,DAP
+Sugarcane,Clay,1.5,Kharif,Wheat,300,142,127,Chemical,DAP
+Groundnut,Alluvial,1,Kharif,Wheat,80,100,60,Chemical,DAP
+Groundnut,Alluvial,2,Kharif,Wheat,160,200,120,Chemical,DAP
+Groundnut,Alluvial,3,Kharif,Wheat,240,300,180,Chemical,DAP
+Groundnut,Alluvial,0.5,Kharif,Wheat,40,50,30,Chemical,DAP
+Groundnut,Alluvial,1.5,Kharif,Wheat,120,150,90,Chemical,DAP
+Groundnut,Alluvial,2.5,Kharif,Wheat,200,250,150,Chemical,DAP
+Groundnut,Black (Regur),1,Kharif,Wheat,85,105,65,Chemical,DAP
+Groundnut,Black (Regur),2,Kharif,Wheat,170,210,130,Chemical,DAP
+Groundnut,Black (Regur),3,Kharif,Wheat,255,315,195,Chemical,DAP
+Groundnut,Black (Regur),0.5,Kharif,Wheat,42,52,32,Chemical,DAP
+Groundnut,Black (Regur),1.5,Kharif,Wheat,127,157,97,Chemical,DAP
+Groundnut,Red,1,Kharif,Wheat,75,95,55,Natural,Vermicompost
+Groundnut,Red,2,Kharif,Wheat,150,190,110,Natural,Vermicompost
+Groundnut,Red,3,Kharif,Wheat,225,285,165,Natural,Vermicompost
+Groundnut,Red,0.5,Kharif,Wheat,37,47,27,Natural,Vermicompost
+Groundnut,Red,1.5,Kharif,Wheat,112,142,82,Natural,Vermicompost
+Groundnut,Sandy,1,Kharif,Wheat,80,100,58,Natural,Compost
+Groundnut,Sandy,2,Kharif,Wheat,160,200,116,Natural,Compost
+Groundnut,Sandy,3,Kharif,Wheat,240,300,174,Natural,Compost
+Groundnut,Sandy,0.5,Kharif,Wheat,40,50,29,Natural,Compost
+Groundnut,Sandy,1.5,Kharif,Wheat,120,150,87,Natural,Compost
+Groundnut,Laterite,1,Kharif,Wheat,85,105,62,Chemical,NPK
+Groundnut,Laterite,2,Kharif,Wheat,170,210,124,Chemical,NPK
+Groundnut,Laterite,3,Kharif,Wheat,255,315,186,Chemical,NPK
+Groundnut,Laterite,0.5,Kharif,Wheat,42,52,31,Chemical,NPK
+Groundnut,Laterite,1.5,Kharif,Wheat,127,157,93,Chemical,NPK
+Groundnut,Clay,1,Kharif,Wheat,90,110,65,Chemical,DAP
+Groundnut,Clay,2,Kharif,Wheat,180,220,130,Chemical,DAP
+Groundnut,Clay,3,Kharif,Wheat,270,330,195,Chemical,DAP
+Groundnut,Clay,0.5,Kharif,Wheat,45,55,32,Chemical,DAP
+Groundnut,Clay,1.5,Kharif,Wheat,135,165,97,Chemical,DAP
+Soybean,Alluvial,1,Kharif,Wheat,40,80,60,Chemical,DAP
+Soybean,Alluvial,2,Kharif,Wheat,80,160,120,Chemical,DAP
+Soybean,Alluvial,3,Kharif,Wheat,120,240,180,Chemical,DAP
+Soybean,Alluvial,0.5,Kharif,Wheat,20,40,30,Chemical,DAP
+Soybean,Alluvial,1.5,Kharif,Wheat,60,120,90,Chemical,DAP
+Soybean,Alluvial,2.5,Kharif,Wheat,100,200,150,Chemical,DAP
+Soybean,Black (Regur),1,Kharif,Wheat,45,85,65,Chemical,DAP
+Soybean,Black (Regur),2,Kharif,Wheat,90,170,130,Chemical,DAP
+Soybean,Black (Regur),3,Kharif,Wheat,135,255,195,Chemical,DAP
+Soybean,Black (Regur),0.5,Kharif,Wheat,22,42,32,Chemical,DAP
+Soybean,Black (Regur),1.5,Kharif,Wheat,67,127,97,Chemical,DAP
+Soybean,Red,1,Kharif,Wheat,35,75,55,Natural,Vermicompost
+Soybean,Red,2,Kharif,Wheat,70,150,110,Natural,Vermicompost
+Soybean,Red,3,Kharif,Wheat,105,225,165,Natural,Vermicompost
+Soybean,Red,0.5,Kharif,Wheat,17,37,27,Natural,Vermicompost
+Soybean,Red,1.5,Kharif,Wheat,52,112,82,Natural,Vermicompost
+Soybean,Sandy,1,Kharif,Wheat,40,80,58,Natural,Compost
+Soybean,Sandy,2,Kharif,Wheat,80,160,116,Natural,Compost
+Soybean,Sandy,3,Kharif,Wheat,120,240,174,Natural,Compost
+Soybean,Sandy,0.5,Kharif,Wheat,20,40,29,Natural,Compost
+Soybean,Sandy,1.5,Kharif,Wheat,60,120,87,Natural,Compost
+Soybean,Laterite,1,Kharif,Wheat,45,85,60,Chemical,NPK
+Soybean,Laterite,2,Kharif,Wheat,90,170,120,Chemical,NPK
+Soybean,Laterite,3,Kharif,Wheat,135,255,180,Chemical,NPK
+Soybean,Laterite,0.5,Kharif,Wheat,22,42,30,Chemical,NPK
+Soybean,Laterite,1.5,Kharif,Wheat,67,127,90,Chemical,NPK
+Soybean,Clay,1,Kharif,Wheat,50,90,65,Chemical,DAP
+Soybean,Clay,2,Kharif,Wheat,100,180,130,Chemical,DAP
+Soybean,Clay,3,Kharif,Wheat,150,270,195,Chemical,DAP
+Soybean,Clay,0.5,Kharif,Wheat,25,45,32,Chemical,DAP
+Soybean,Clay,1.5,Kharif,Wheat,75,135,97,Chemical,DAP
+Mustard,Alluvial,1,Rabi,Wheat,60,50,40,Chemical,Urea
+Mustard,Alluvial,2,Rabi,Wheat,120,100,80,Chemical,Urea
+Mustard,Alluvial,3,Rabi,Wheat,180,150,120,Chemical,Urea
+Mustard,Alluvial,0.5,Rabi,Wheat,30,25,20,Chemical,Urea
+Mustard,Alluvial,1.5,Rabi,Wheat,90,75,60,Chemical,Urea
+Mustard,Alluvial,2.5,Rabi,Wheat,150,125,100,Chemical,Urea
+Mustard,Black (Regur),1,Rabi,Wheat,65,55,45,Chemical,DAP
+Mustard,Black (Regur),2,Rabi,Wheat,130,110,90,Chemical,DAP
+Mustard,Black (Regur),3,Rabi,Wheat,195,165,135,Chemical,DAP
+Mustard,Black (Regur),0.5,Rabi,Wheat,32,27,22,Chemical,DAP
+Mustard,Black (Regur),1.5,Rabi,Wheat,97,82,67,Chemical,DAP
+Mustard,Red,1,Rabi,Wheat,55,45,35,Natural,Vermicompost
+Mustard,Red,2,Rabi,Wheat,110,90,70,Natural,Vermicompost
+Mustard,Red,3,Rabi,Wheat,165,135,105,Natural,Vermicompost
+Mustard,Red,0.5,Rabi,Wheat,27,22,17,Natural,Vermicompost
+Mustard,Red,1.5,Rabi,Wheat,82,67,52,Natural,Vermicompost
+Mustard,Sandy,1,Rabi,Wheat,60,50,38,Natural,Compost
+Mustard,Sandy,2,Rabi,Wheat,120,100,76,Natural,Compost
+Mustard,Sandy,3,Rabi,Wheat,180,150,114,Natural,Compost
+Mustard,Sandy,0.5,Rabi,Wheat,30,25,19,Natural,Compost
+Mustard,Sandy,1.5,Rabi,Wheat,90,75,57,Natural,Compost
+Mustard,Laterite,1,Rabi,Wheat,65,55,42,Chemical,NPK
+Mustard,Laterite,2,Rabi,Wheat,130,110,84,Chemical,NPK
+Mustard,Laterite,3,Rabi,Wheat,195,165,126,Chemical,NPK
+Mustard,Laterite,0.5,Rabi,Wheat,32,27,21,Chemical,NPK
+Mustard,Laterite,1.5,Rabi,Wheat,97,82,63,Chemical,NPK
+Mustard,Clay,1,Rabi,Wheat,70,60,45,Chemical,DAP
+Mustard,Clay,2,Rabi,Wheat,140,120,90,Chemical,DAP
+Mustard,Clay,3,Rabi,Wheat,210,180,135,Chemical,DAP
+Mustard,Clay,0.5,Rabi,Wheat,35,30,22,Chemical,DAP
+Mustard,Clay,1.5,Rabi,Wheat,105,90,67,Chemical,DAP
+Groundnut,Alluvial,1,Kharif,Rice,90,110,60,Chemical,DAP
+Groundnut,Alluvial,2,Kharif,Rice,180,220,120,Chemical,DAP
+Groundnut,Alluvial,3,Kharif,Rice,270,330,180,Chemical,DAP
+Groundnut,Black (Regur),1,Kharif,Rice,95,115,65,Chemical,DAP
+Groundnut,Black (Regur),2,Kharif,Rice,190,230,130,Chemical,DAP
+Groundnut,Black (Regur),3,Kharif,Rice,285,345,195,Chemical,DAP
+Soybean,Alluvial,1,Kharif,Rice,45,85,60,Chemical,DAP
+Soybean,Alluvial,2,Kharif,Rice,90,170,120,Chemical,DAP
+Soybean,Alluvial,3,Kharif,Rice,135,255,180,Chemical,DAP
+Soybean,Black (Regur),1,Kharif,Rice,50,90,65,Chemical,DAP
+Soybean,Black (Regur),2,Kharif,Rice,100,180,130,Chemical,DAP
+Soybean,Black (Regur),3,Kharif,Rice,150,270,195,Chemical,DAP
+Mustard,Alluvial,1,Rabi,Rice,65,55,40,Chemical,Urea
+Mustard,Alluvial,2,Rabi,Rice,130,110,80,Chemical,Urea
+Mustard,Alluvial,3,Rabi,Rice,195,165,120,Chemical,Urea
+Mustard,Black (Regur),1,Rabi,Rice,70,60,45,Chemical,DAP
+Mustard,Black (Regur),2,Rabi,Rice,140,120,90,Chemical,DAP
+Mustard,Black (Regur),3,Rabi,Rice,210,180,135,Chemical,DAP
+Rice,Alluvial,1,Zaid,Groundnut,110,55,35,Chemical,Urea
+Rice,Alluvial,2,Zaid,Groundnut,220,110,70,Chemical,Urea
+Rice,Alluvial,3,Zaid,Groundnut,330,165,105,Chemical,Urea
+Wheat,Alluvial,1,Zaid,Soybean,145,58,38,Chemical,Urea
+Wheat,Alluvial,2,Zaid,Soybean,290,116,76,Chemical,Urea
+Wheat,Alluvial,3,Zaid,Soybean,435,174,114,Chemical,Urea
+Cotton,Alluvial,1,Zaid,Mustard,115,58,55,Chemical,Urea
+Cotton,Alluvial,2,Zaid,Mustard,230,116,110,Chemical,Urea
+Cotton,Alluvial,3,Zaid,Mustard,345,174,165,Chemical,Urea
+Maize,Alluvial,1,Zaid,Groundnut,145,72,38,Chemical,Urea
+Maize,Alluvial,2,Zaid,Groundnut,290,144,76,Chemical,Urea
+Maize,Alluvial,3,Zaid,Groundnut,435,216,114,Chemical,Urea

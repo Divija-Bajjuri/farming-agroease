@@ -18,12 +18,20 @@ export default function Chatbot() {
 
   const [messages, setMessages] = useState<any[]>([]);
   const [input, setInput] = useState("");
+  const [isSpeaking, setIsSpeaking] = useState(false);
 
   const features = featureSteps[language];
   const quickQuestions = Object.keys(features);
 
+  // ⏹ Stop voice
+  const stopSpeaking = () => {
+    window.speechSynthesis.cancel();
+    setIsSpeaking(false);
+  };
+
   // 🔊 Voice output
   const speak = (text: string) => {
+    window.speechSynthesis.cancel();
 
     const speech = new SpeechSynthesisUtterance(text);
 
@@ -31,18 +39,23 @@ export default function Chatbot() {
     else if (language === "hi") speech.lang = "hi-IN";
     else speech.lang = "en-IN";
 
+    speech.onstart = () => setIsSpeaking(true);
+    speech.onend = () => setIsSpeaking(false);
+    speech.onerror = () => setIsSpeaking(false);
+
     window.speechSynthesis.speak(speech);
   };
 
   // 📄 Format feature answer
   const buildFeatureAnswer = (feature: any) => {
+    const stepsLabel = language === "hi" ? "चरण:" : language === "te" ? "దశలు:" : "Steps:";
 
     return `
 ${feature.title}
 
 ${feature.description}
 
-Steps:
+${stepsLabel}
 ${feature.steps.join("\n")}
 `;
   };
@@ -299,6 +312,29 @@ ${feature.steps.join("\n")}
 
     ))}
   </div>
+
+  {/* Stop Voice Button */}
+  {isSpeaking && (
+    <button
+      onClick={stopSpeaking}
+      style={{
+        marginBottom: "10px",
+        padding: "8px 16px",
+        borderRadius: "20px",
+        border: "none",
+        background: "#ef4444",
+        color: "white",
+        cursor: "pointer",
+        fontSize: "13px",
+        fontWeight: 500,
+        display: "flex",
+        alignItems: "center",
+        gap: "5px"
+      }}
+    >
+      ⏹ {language === "hi" ? "रोकें" : language === "te" ? " ఆపు" : "Stop Voice"}
+    </button>
+  )}
 
   {/* Input Section */}
   <div

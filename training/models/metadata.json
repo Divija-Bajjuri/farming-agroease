@@ -1,0 +1,86 @@
+{
+    "feature_columns": [
+        "crop_type_encoded",
+        "soil_type_encoded",
+        "farm_size",
+        "season_encoded",
+        "previous_crop_encoded"
+    ],
+    "target_columns": [
+        "nitrogen",
+        "phosphorus",
+        "potassium"
+    ],
+    "categorical_columns": [
+        "crop_type",
+        "soil_type",
+        "season",
+        "previous_crop"
+    ],
+    "fertilizer_categorical_columns": [
+        "fertilizer_type",
+        "fertilizer_name"
+    ],
+    "crop_types": [
+        "Cotton",
+        "Groundnut",
+        "Maize",
+        "Mustard",
+        "Rice",
+        "Soybean",
+        "Sugarcane",
+        "Tomato",
+        "Wheat"
+    ],
+    "soil_types": [
+        "Alluvial",
+        "Black (Regur)",
+        "Clay",
+        "Laterite",
+        "Red",
+        "Sandy"
+    ],
+    "seasons": [
+        "Kharif",
+        "Rabi",
+        "Zaid"
+    ],
+    "previous_crops": [
+        "Groundnut",
+        "Mustard",
+        "Rice",
+        "Soybean",
+        "Wheat"
+    ],
+    "fertilizer_types": [
+        "Chemical",
+        "Natural"
+    ],
+    "fertilizer_names": [
+        "Compost",
+        "DAP",
+        "NPK",
+        "Urea",
+        "Vermicompost"
+    ],
+    "metrics": {
+        "nitrogen": {
+            "r2_score": 0.9879587292671204,
+            "rmse": 13.057168118785427
+        },
+        "phosphorus": {
+            "r2_score": 0.9934596419334412,
+            "rmse": 6.326517385980017
+        },
+        "potassium": {
+            "r2_score": 0.9962103366851807,
+            "rmse": 3.346296107559122
+        },
+        "fertilizer_type": {
+            "accuracy": 0.9166666666666666
+        },
+        "fertilizer_name": {
+            "accuracy": 0.95
+        }
+    }
+}

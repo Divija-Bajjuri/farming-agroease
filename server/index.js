@@ -20,6 +20,7 @@ app.use('/api/machines', require('./routes/machines'));
 app.use('/api/schemes', require('./routes/schemes'));
 app.use('/api/faqs', require('./routes/faqs'));
 app.use('/api/fertilizers', require('./routes/fertilizers'));
+app.use('/api/fertilizer-ml', require('./routes/fertilizer-ml'));
 //app.use('/api/diseases', require('./routes/diseases'));
 
 // Health check
